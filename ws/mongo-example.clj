@@ -10,6 +10,7 @@
 (ns mongo-example
   (:require [gorilla-plot.core :as plot])
   (:use clojure.repl)
+  (:require [clojure.string :as s])
   (:use clojure.pprint)
   (:use somnium.congomongo))
 ;; @@
@@ -35,7 +36,7 @@
 (collections)
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>(&quot;system.indexes&quot; &quot;words&quot;)</span>","value":"(\"system.indexes\" \"words\")"}
+;;; {"type":"html","content":"<span class='clj-unkown'>(&quot;system.indexes&quot; &quot;words&quot; &quot;words1&quot;)</span>","value":"(\"system.indexes\" \"words\" \"words1\")"}
 ;; <=
 
 ;; @@
@@ -57,7 +58,7 @@
 (time (mongo-find-matching-words "aeerst"))
 ;; @@
 ;; ->
-;;; &quot;Elapsed time: 1.49008 msecs&quot;
+;;; &quot;Elapsed time: 0.617885 msecs&quot;
 ;;; 
 ;; <-
 ;; =>
@@ -79,10 +80,220 @@
 ;; <=
 
 ;; @@
-(System/getProperty "java.class.path")
+(pprint (sort (.split (System/getProperty "java.class.path") ":")))
 ;; @@
+;; ->
+;;; (&quot;/root/.m2/repository/args4j/args4j/2.0.16/args4j-2.0.16.jar&quot;
+;;;  &quot;/root/.m2/repository/aysylu/loom/0.5.0/loom-0.5.0.jar&quot;
+;;;  &quot;/root/.m2/repository/bouncycastle/bcmail-jdk14/138/bcmail-jdk14-138.jar&quot;
+;;;  &quot;/root/.m2/repository/bouncycastle/bcprov-jdk14/138/bcprov-jdk14-138.jar&quot;
+;;;  &quot;/root/.m2/repository/ch/qos/logback/logback-classic/1.1.2/logback-classic-1.1.2.jar&quot;
+;;;  &quot;/root/.m2/repository/ch/qos/logback/logback-core/1.1.2/logback-core-1.1.2.jar&quot;
+;;;  &quot;/root/.m2/repository/cheshire/cheshire/5.3.1/cheshire-5.3.1.jar&quot;
+;;;  &quot;/root/.m2/repository/cider/cider-nrepl/0.7.0/cider-nrepl-0.7.0.jar&quot;
+;;;  &quot;/root/.m2/repository/clatrix/clatrix/0.3.0/clatrix-0.3.0.jar&quot;
+;;;  &quot;/root/.m2/repository/clj-blueprints2/clj-blueprints2/0.0.1/clj-blueprints2-0.0.1.jar&quot;
+;;;  &quot;/root/.m2/repository/clj-gremlin/clj-gremlin/0.0.3/clj-gremlin-0.0.3.jar&quot;
+;;;  &quot;/root/.m2/repository/clj-http/clj-http/0.7.8/clj-http-0.7.8.jar&quot;
+;;;  &quot;/root/.m2/repository/clj-time/clj-time/0.5.0/clj-time-0.5.0.jar&quot;
+;;;  &quot;/root/.m2/repository/cljs-tooling/cljs-tooling/0.1.3/cljs-tooling-0.1.3.jar&quot;
+;;;  &quot;/root/.m2/repository/clojure-complete/clojure-complete/0.2.3/clojure-complete-0.2.3.jar&quot;
+;;;  &quot;/root/.m2/repository/clojureql/clojureql/1.0.4/clojureql-1.0.4.jar&quot;
+;;;  &quot;/root/.m2/repository/clojurewerkz/neocons/2.0.1/neocons-2.0.1.jar&quot;
+;;;  &quot;/root/.m2/repository/clojurewerkz/support/0.19.0/support-0.19.0.jar&quot;
+;;;  &quot;/root/.m2/repository/clojurewerkz/urly/2.0.0-alpha5/urly-2.0.0-alpha5.jar&quot;
+;;;  &quot;/root/.m2/repository/clout/clout/1.2.0/clout-1.2.0.jar&quot;
+;;;  &quot;/root/.m2/repository/cn/guoyukun/jdbc/db2jcc/1.4.2/db2jcc-1.4.2.jar&quot;
+;;;  &quot;/root/.m2/repository/cn/guoyukun/jdbc/db2jcc_license_cu/1.4.2/db2jcc_license_cu-1.4.2.jar&quot;
+;;;  &quot;/root/.m2/repository/colt/colt/1.2.0/colt-1.2.0.jar&quot;
+;;;  &quot;/root/.m2/repository/com/ashafa/clutch/0.4.0/clutch-0.4.0.jar&quot;
+;;;  &quot;/root/.m2/repository/com/cemerick/piggieback/0.1.3/piggieback-0.1.3.jar&quot;
+;;;  &quot;/root/.m2/repository/com/cemerick/url/0.0.6/url-0.0.6.jar&quot;
+;;;  &quot;/root/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.1/jackson-core-2.3.1.jar&quot;
+;;;  &quot;/root/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.1/jackson-dataformat-smile-2.3.1.jar&quot;
+;;;  &quot;/root/.m2/repository/com/github/rwl/AMDJ/1.0.1/AMDJ-1.0.1.jar&quot;
+;;;  &quot;/root/.m2/repository/com/github/rwl/BTFJ/1.0.1/BTFJ-1.0.1.jar&quot;
+;;;  &quot;/root/.m2/repository/com/github/rwl/COLAMDJ/1.0.1/COLAMDJ-1.0.1.jar&quot;
+;;;  &quot;/root/.m2/repository/com/github/rwl/JKLU/1.0.0/JKLU-1.0.0.jar&quot;
+;;;  &quot;/root/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar&quot;
+;;;  &quot;/root/.m2/repository/com/google/guava/guava/14.0.1/guava-14.0.1.jar&quot;
+;;;  &quot;/root/.m2/repository/com/google/javascript/closure-compiler/v20130603/closure-compiler-v20130603.jar&quot;
+;;;  &quot;/root/.m2/repository/com/google/protobuf/protobuf-java/2.4.1/protobuf-java-2.4.1.jar&quot;
+;;;  &quot;/root/.m2/repository/com/googlecode/netlib-java/netlib-java/0.9.3/netlib-java-0.9.3.jar&quot;
+;;;  &quot;/root/.m2/repository/com/keminglabs/cljx/0.4.0/cljx-0.4.0.jar&quot;
+;;;  &quot;/root/.m2/repository/com/lowagie/itext/2.1.7/itext-2.1.7.jar&quot;
+;;;  &quot;/root/.m2/repository/com/microsoft/sqljdbc4/3.0/sqljdbc4-3.0.jar&quot;
+;;;  &quot;/root/.m2/repository/com/mysql/connectorj/5.1.12/connectorj-5.1.12.jar&quot;
+;;;  &quot;/root/.m2/repository/com/novemberain/monger/1.7.0-beta1/monger-1.7.0-beta1.jar&quot;
+;;;  &quot;/root/.m2/repository/com/novemberain/validateur/1.5.0/validateur-1.5.0.jar&quot;
+;;;  &quot;/root/.m2/repository/com/rabbitmq/amqp-client/2.8.1/amqp-client-2.8.1.jar&quot;
+;;;  &quot;/root/.m2/repository/com/taoensso/carmine/2.7.0/carmine-2.7.0.jar&quot;
+;;;  &quot;/root/.m2/repository/com/taoensso/encore/1.7.1/encore-1.7.1.jar&quot;
+;;;  &quot;/root/.m2/repository/com/taoensso/nippy/2.6.3/nippy-2.6.3.jar&quot;
+;;;  &quot;/root/.m2/repository/com/taoensso/timbre/3.2.1/timbre-3.2.1.jar&quot;
+;;;  &quot;/root/.m2/repository/com/tinkerpop/blueprints/blueprints-core/2.2.0/blueprints-core-2.2.0.jar&quot;
+;;;  &quot;/root/.m2/repository/com/tinkerpop/gremlin/gremlin-java/2.2.0/gremlin-java-2.2.0.jar&quot;
+;;;  &quot;/root/.m2/repository/com/tinkerpop/pipes/2.2.0/pipes-2.2.0.jar&quot;
+;;;  &quot;/root/.m2/repository/com/uswitch/clj-soap/0.2.3/clj-soap-0.2.3.jar&quot;
+;;;  &quot;/root/.m2/repository/com/vijaykiran/docjure/1.7.0/docjure-1.7.0.jar&quot;
+;;;  &quot;/root/.m2/repository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar&quot;
+;;;  &quot;/root/.m2/repository/commons-fileupload/commons-fileupload/1.3/commons-fileupload-1.3.jar&quot;
+;;;  &quot;/root/.m2/repository/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar&quot;
+;;;  &quot;/root/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar&quot;
+;;;  &quot;/root/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar&quot;
+;;;  &quot;/root/.m2/repository/compliment/compliment/0.1.3/compliment-0.1.3.jar&quot;
+;;;  &quot;/root/.m2/repository/compojure/compojure/1.1.8/compojure-1.1.8.jar&quot;
+;;;  &quot;/root/.m2/repository/concurrent/concurrent/1.3.4/concurrent-1.3.4.jar&quot;
+;;;  &quot;/root/.m2/repository/congomongo/congomongo/0.3.3/congomongo-0.3.3.jar&quot;
+;;;  &quot;/root/.m2/repository/crouton/crouton/0.1.1/crouton-0.1.1.jar&quot;
+;;;  &quot;/root/.m2/repository/de/kotka/lazymap/3.1.0/lazymap-3.1.0.jar&quot;
+;;;  &quot;/root/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar&quot;
+;;;  &quot;/root/.m2/repository/expresso/expresso/0.2.0/expresso-0.2.0.jar&quot;
+;;;  &quot;/root/.m2/repository/fr/grunwald/lazymap/3.1.0/lazymap-3.1.0.jar&quot;
+;;;  &quot;/root/.m2/repository/gavagai/gavagai/0.3.1/gavagai-0.3.1.jar&quot;
+;;;  &quot;/root/.m2/repository/gorilla-renderable/gorilla-renderable/1.0.0/gorilla-renderable-1.0.0.jar&quot;
+;;;  &quot;/root/.m2/repository/gorilla-repl/gorilla-repl/0.3.3/gorilla-repl-0.3.3.jar&quot;
+;;;  &quot;/root/.m2/repository/grimradical/clj-semver/0.2.0/clj-semver-0.2.0.jar&quot;
+;;;  &quot;/root/.m2/repository/hiccup/hiccup/1.0.5/hiccup-1.0.5.jar&quot;
+;;;  &quot;/root/.m2/repository/http-kit/http-kit/2.1.18/http-kit-2.1.18.jar&quot;
+;;;  &quot;/root/.m2/repository/incanter-gorilla/incanter-gorilla/0.1.0/incanter-gorilla-0.1.0.jar&quot;
+;;;  &quot;/root/.m2/repository/incanter/incanter-charts/1.5.4/incanter-charts-1.5.4.jar&quot;
+;;;  &quot;/root/.m2/repository/incanter/incanter-core/1.5.4/incanter-core-1.5.4.jar&quot;
+;;;  &quot;/root/.m2/repository/incanter/incanter-excel/1.5.4/incanter-excel-1.5.4.jar&quot;
+;;;  &quot;/root/.m2/repository/incanter/incanter-io/1.5.4/incanter-io-1.5.4.jar&quot;
+;;;  &quot;/root/.m2/repository/incanter/incanter-latex/1.5.4/incanter-latex-1.5.4.jar&quot;
+;;;  &quot;/root/.m2/repository/incanter/incanter-mongodb/1.5.4/incanter-mongodb-1.5.4.jar&quot;
+;;;  &quot;/root/.m2/repository/incanter/incanter-pdf/1.5.4/incanter-pdf-1.5.4.jar&quot;
+;;;  &quot;/root/.m2/repository/incanter/incanter-sql/1.5.4/incanter-sql-1.5.4.jar&quot;
+;;;  &quot;/root/.m2/repository/incanter/incanter-svg/1.5.4/incanter-svg-1.5.4.jar&quot;
+;;;  &quot;/root/.m2/repository/incanter/incanter-zoo/1.5.4/incanter-zoo-1.5.4.jar&quot;
+;;;  &quot;/root/.m2/repository/incanter/incanter/1.5.4/incanter-1.5.4.jar&quot;
+;;;  &quot;/root/.m2/repository/incanter/jcommon/1.0.16/jcommon-1.0.16.jar&quot;
+;;;  &quot;/root/.m2/repository/incanter/jfreechart/1.0.13-no-gnujaxp/jfreechart-1.0.13-no-gnujaxp.jar&quot;
+;;;  &quot;/root/.m2/repository/instaparse/instaparse/1.2.2/instaparse-1.2.2.jar&quot;
+;;;  &quot;/root/.m2/repository/io/aviso/pretty/0.1.10/pretty-0.1.10.jar&quot;
+;;;  &quot;/root/.m2/repository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar&quot;
+;;;  &quot;/root/.m2/repository/javax/ws/rs/jsr311-api/1.0/jsr311-api-1.0.jar&quot;
+;;;  &quot;/root/.m2/repository/jaxen/jaxen/1.1.3/jaxen-1.1.3.jar&quot;
+;;;  &quot;/root/.m2/repository/jline/jline/2.11/jline-2.11.jar&quot;
+;;;  &quot;/root/.m2/repository/joda-time/joda-time/2.2/joda-time-2.2.jar&quot;
+;;;  &quot;/root/.m2/repository/jonase/kibit/0.0.8/kibit-0.0.8.jar&quot;
+;;;  &quot;/root/.m2/repository/junit/junit/4.10/junit-4.10.jar&quot;
+;;;  &quot;/root/.m2/repository/lein-kibit/lein-kibit/0.0.8/lein-kibit-0.0.8.jar&quot;
+;;;  &quot;/root/.m2/repository/loom-gorilla/loom-gorilla/0.1.0/loom-gorilla-0.1.0.jar&quot;
+;;;  &quot;/root/.m2/repository/net/cgrand/parsley/0.9.1/parsley-0.9.1.jar&quot;
+;;;  &quot;/root/.m2/repository/net/cgrand/regex/1.1.0/regex-1.1.0.jar&quot;
+;;;  &quot;/root/.m2/repository/net/mikera/core.matrix/0.10.0/core.matrix-0.10.0.jar&quot;
+;;;  &quot;/root/.m2/repository/net/sf/opencsv/opencsv/2.3/opencsv-2.3.jar&quot;
+;;;  &quot;/root/.m2/repository/net/sourceforge/csparsej/csparsej/1.1.1/csparsej-1.1.1.jar&quot;
+;;;  &quot;/root/.m2/repository/net/sourceforge/f2j/arpack_combined_all/0.1/arpack_combined_all-0.1.jar&quot;
+;;;  &quot;/root/.m2/repository/net/sourceforge/jplasma/core-lapack/0.1/core-lapack-0.1.jar&quot;
+;;;  &quot;/root/.m2/repository/net/sourceforge/jplasma/jplasma/1.2.0/jplasma-1.2.0.jar&quot;
+;;;  &quot;/root/.m2/repository/net/sourceforge/jtransforms/jtransforms/2.4.0/jtransforms-2.4.0.jar&quot;
+;;;  &quot;/root/.m2/repository/net/sourceforge/parallelcolt/optimization/1.0/optimization-1.0.jar&quot;
+;;;  &quot;/root/.m2/repository/net/sourceforge/parallelcolt/parallelcolt/0.10.0/parallelcolt-0.10.0.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/axis2/axis2-adb/1.6.2/axis2-adb-1.6.2.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/axis2/axis2-kernel/1.6.2/axis2-kernel-1.6.2.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/axis2/axis2-transport-http/1.6.2/axis2-transport-http-1.6.2.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/axis2/axis2-transport-local/1.6.2/axis2-transport-local-1.6.2.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/commons/commons-pool2/2.2/commons-pool2-2.2.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/geronimo/specs/geronimo-activation_1.1_spec/1.0.2/geronimo-activation_1.1_spec-1.0.2.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/geronimo/specs/geronimo-javamail_1.4_spec/1.7.1/geronimo-javamail_1.4_spec-1.7.1.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/geronimo/specs/geronimo-jta_1.1_spec/1.1/geronimo-jta_1.1_spec-1.1.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/geronimo/specs/geronimo-stax-api_1.0_spec/1.0.1/geronimo-stax-api_1.0_spec-1.0.1.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/geronimo/specs/geronimo-ws-metadata_2.0_spec/1.1.2/geronimo-ws-metadata_2.0_spec-1.1.2.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/httpcomponents/httpmime/4.3.1/httpmime-4.3.1.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/james/apache-mime4j-core/0.7.2/apache-mime4j-core-0.7.2.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/neethi/neethi/3.0.2/neethi-3.0.2.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/poi/poi-ooxml-schemas/3.9/poi-ooxml-schemas-3.9.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/poi/poi-ooxml/3.9/poi-ooxml-3.9.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/poi/poi/3.9/poi-3.9.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/woden/woden-api/1.0M9/woden-api-1.0M9.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/woden/woden-impl-commons/1.0M9/woden-impl-commons-1.0M9.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/woden/woden-impl-dom/1.0M9/woden-impl-dom-1.0M9.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/ws/commons/axiom/axiom-api/1.2.13/axiom-api-1.2.13.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/ws/commons/axiom/axiom-impl/1.2.13/axiom-impl-1.2.13.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/ws/commons/schema/XmlSchema/1.4.7/XmlSchema-1.4.7.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/xmlbeans/xmlbeans/2.3.0/xmlbeans-2.3.0.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/xmlgraphics/batik-awt-util/1.7/batik-awt-util-1.7.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/xmlgraphics/batik-css/1.7/batik-css-1.7.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/xmlgraphics/batik-dom/1.7/batik-dom-1.7.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/xmlgraphics/batik-ext/1.7/batik-ext-1.7.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/xmlgraphics/batik-svggen/1.7/batik-svggen-1.7.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/xmlgraphics/batik-util/1.7/batik-util-1.7.jar&quot;
+;;;  &quot;/root/.m2/repository/org/apache/xmlgraphics/batik-xml/1.7/batik-xml-1.7.jar&quot;
+;;;  &quot;/root/.m2/repository/org/bouncycastle/bcmail-jdk14/1.38/bcmail-jdk14-1.38.jar&quot;
+;;;  &quot;/root/.m2/repository/org/bouncycastle/bcprov-jdk14/1.38/bcprov-jdk14-1.38.jar&quot;
+;;;  &quot;/root/.m2/repository/org/bouncycastle/bctsp-jdk14/1.38/bctsp-jdk14-1.38.jar&quot;
+;;;  &quot;/root/.m2/repository/org/clojars/trptcolin/sjacket/0.1.0.6/sjacket-0.1.0.6.jar&quot;
+;;;  &quot;/root/.m2/repository/org/clojure/clojure/1.5.1/clojure-1.5.1.jar&quot;
+;;;  &quot;/root/.m2/repository/org/clojure/clojurescript/0.0-2080/clojurescript-0.0-2080.jar&quot;
+;;;  &quot;/root/.m2/repository/org/clojure/core.cache/0.6.3/core.cache-0.6.3.jar&quot;
+;;;  &quot;/root/.m2/repository/org/clojure/core.incubator/0.1.1/core.incubator-0.1.1.jar&quot;
+;;;  &quot;/root/.m2/repository/org/clojure/core.logic/0.8.4/core.logic-0.8.4.jar&quot;
+;;;  &quot;/root/.m2/repository/org/clojure/core.match/0.2.0/core.match-0.2.0.jar&quot;
+;;;  &quot;/root/.m2/repository/org/clojure/core.memoize/0.5.6/core.memoize-0.5.6.jar&quot;
+;;;  &quot;/root/.m2/repository/org/clojure/core.unify/0.5.6/core.unify-0.5.6.jar&quot;
+;;;  &quot;/root/.m2/repository/org/clojure/data.codec/0.1.0/data.codec-0.1.0.jar&quot;
+;;;  &quot;/root/.m2/repository/org/clojure/data.json/0.2.5/data.json-0.2.5.jar&quot;
+;;;  &quot;/root/.m2/repository/org/clojure/data.priority-map/0.0.5/data.priority-map-0.0.5.jar&quot;
+;;;  &quot;/root/.m2/repository/org/clojure/data.xml/0.0.7/data.xml-0.0.7.jar&quot;
+;;;  &quot;/root/.m2/repository/org/clojure/google-closure-library-third-party/0.0-20130212-95c19e7f0f5f/google-closure-library-third-party-0.0-20130212-95c19e7f0f5f.jar&quot;
+;;;  &quot;/root/.m2/repository/org/clojure/google-closure-library/0.0-20130212-95c19e7f0f5f/google-closure-library-0.0-20130212-95c19e7f0f5f.jar&quot;
+;;;  &quot;/root/.m2/repository/org/clojure/java.classpath/0.2.0/java.classpath-0.2.0.jar&quot;
+;;;  &quot;/root/.m2/repository/org/clojure/java.jdbc/0.2.3/java.jdbc-0.2.3.jar&quot;
+;;;  &quot;/root/.m2/repository/org/clojure/math.combinatorics/0.0.3/math.combinatorics-0.0.3.jar&quot;
+;;;  &quot;/root/.m2/repository/org/clojure/tools.cli/0.2.2/tools.cli-0.2.2.jar&quot;
+;;;  &quot;/root/.m2/repository/org/clojure/tools.macro/0.1.0/tools.macro-0.1.0.jar&quot;
+;;;  &quot;/root/.m2/repository/org/clojure/tools.namespace/0.2.5/tools.namespace-0.2.5.jar&quot;
+;;;  &quot;/root/.m2/repository/org/clojure/tools.nrepl/0.2.6/tools.nrepl-0.2.6.jar&quot;
+;;;  &quot;/root/.m2/repository/org/clojure/tools.reader/0.8.1/tools.reader-0.8.1.jar&quot;
+;;;  &quot;/root/.m2/repository/org/clojure/tools.trace/0.7.8/tools.trace-0.7.8.jar&quot;
+;;;  &quot;/root/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.8.5/jackson-core-asl-1.8.5.jar&quot;
+;;;  &quot;/root/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.8.5/jackson-mapper-asl-1.8.5.jar&quot;
+;;;  &quot;/root/.m2/repository/org/codehaus/jettison/jettison/1.3/jettison-1.3.jar&quot;
+;;;  &quot;/root/.m2/repository/org/codehaus/woodstox/wstx-asl/3.2.9/wstx-asl-3.2.9.jar&quot;
+;;;  &quot;/root/.m2/repository/org/danlarkin/clojure-json/1.1/clojure-json-1.1.jar&quot;
+;;;  &quot;/root/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar&quot;
+;;;  &quot;/root/.m2/repository/org/iq80/snappy/snappy/0.3/snappy-0.3.jar&quot;
+;;;  &quot;/root/.m2/repository/org/jblas/jblas/1.2.3/jblas-1.2.3.jar&quot;
+;;;  &quot;/root/.m2/repository/org/json/json/20090211/json-20090211.jar&quot;
+;;;  &quot;/root/.m2/repository/org/jsoup/jsoup/1.7.1/jsoup-1.7.1.jar&quot;
+;;;  &quot;/root/.m2/repository/org/mongodb/mongo-java-driver/2.11.2/mongo-java-driver-2.11.2.jar&quot;
+;;;  &quot;/root/.m2/repository/org/mozilla/rhino/1.7R4/rhino-1.7R4.jar&quot;
+;;;  &quot;/root/.m2/repository/org/scilab/forge/jlatexmath/0.9.6/jlatexmath-0.9.6.jar&quot;
+;;;  &quot;/root/.m2/repository/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar&quot;
+;;;  &quot;/root/.m2/repository/org/tcrawley/dynapath/0.2.3/dynapath-0.2.3.jar&quot;
+;;;  &quot;/root/.m2/repository/org/tukaani/xz/1.5/xz-1.5.jar&quot;
+;;;  &quot;/root/.m2/repository/pathetic/pathetic/0.4.0/pathetic-0.4.0.jar&quot;
+;;;  &quot;/root/.m2/repository/potemkin/potemkin/0.3.2/potemkin-0.3.2.jar&quot;
+;;;  &quot;/root/.m2/repository/prismatic/plumbing/0.3.3/plumbing-0.3.3.jar&quot;
+;;;  &quot;/root/.m2/repository/prismatic/schema/0.2.4/schema-0.2.4.jar&quot;
+;;;  &quot;/root/.m2/repository/ragtime/ragtime.core/0.3.4/ragtime.core-0.3.4.jar&quot;
+;;;  &quot;/root/.m2/repository/ring/ring-codec/1.0.0/ring-codec-1.0.0.jar&quot;
+;;;  &quot;/root/.m2/repository/ring/ring-core/1.2.2/ring-core-1.2.2.jar&quot;
+;;;  &quot;/root/.m2/repository/ring/ring-json/0.3.1/ring-json-0.3.1.jar&quot;
+;;;  &quot;/root/.m2/repository/rplevy-draker/wabbitmq/0.3.0/wabbitmq-0.3.0.jar&quot;
+;;;  &quot;/root/.m2/repository/slingshot/slingshot/0.10.3/slingshot-0.10.3.jar&quot;
+;;;  &quot;/root/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar&quot;
+;;;  &quot;/root/.m2/repository/swingrepl/swingrepl/1.3.0/swingrepl-1.3.0.jar&quot;
+;;;  &quot;/root/.m2/repository/tigris/tigris/0.1.1/tigris-0.1.1.jar&quot;
+;;;  &quot;/root/.m2/repository/watchtower/watchtower/0.1.1/watchtower-0.1.1.jar&quot;
+;;;  &quot;/root/.m2/repository/wsdl4j/wsdl4j/1.6.2/wsdl4j-1.6.2.jar&quot;
+;;;  &quot;/root/.m2/repository/xalan/xalan/2.6.0/xalan-2.6.0.jar&quot;
+;;;  &quot;/root/.m2/repository/xml-apis/xml-apis-ext/1.3.04/xml-apis-ext-1.3.04.jar&quot;
+;;;  &quot;/root/.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar&quot;
+;;;  &quot;/root/leinProjects/gorilla-test - 0.3.3/dev-resources&quot;
+;;;  &quot;/root/leinProjects/gorilla-test - 0.3.3/resources&quot;
+;;;  &quot;/root/leinProjects/gorilla-test - 0.3.3/src&quot;
+;;;  &quot;/root/leinProjects/gorilla-test - 0.3.3/target/base+system+user+dev/classes&quot;
+;;;  &quot;/root/leinProjects/gorilla-test - 0.3.3/test&quot;)
+;;; 
+;; <-
 ;; =>
-;;; {"type":"html","content":"<span class='clj-string'>&quot;/root/leinProjects/gorilla-test - 0.3.3/test:/root/leinProjects/gorilla-test - 0.3.3/src:/root/leinProjects/gorilla-test - 0.3.3/dev-resources:/root/leinProjects/gorilla-test - 0.3.3/resources:/root/leinProjects/gorilla-test - 0.3.3/target/base+system+user+dev/classes:/root/.m2/repository/concurrent/concurrent/1.3.4/concurrent-1.3.4.jar:/root/.m2/repository/org/clojure/core.logic/0.8.4/core.logic-0.8.4.jar:/root/.m2/repository/clj-http/clj-http/0.7.8/clj-http-0.7.8.jar:/root/.m2/repository/aysylu/loom/0.5.0/loom-0.5.0.jar:/root/.m2/repository/clojureql/clojureql/1.0.4/clojureql-1.0.4.jar:/root/.m2/repository/org/clojure/tools.macro/0.1.0/tools.macro-0.1.0.jar:/root/.m2/repository/cn/guoyukun/jdbc/db2jcc_license_cu/1.4.2/db2jcc_license_cu-1.4.2.jar:/root/.m2/repository/org/apache/james/apache-mime4j-core/0.7.2/apache-mime4j-core-0.7.2.jar:/root/.m2/repository/colt/colt/1.2.0/colt-1.2.0.jar:/root/.m2/repository/incanter/incanter-core/1.5.4/incanter-core-1.5.4.jar:/root/.m2/repository/org/scilab/forge/jlatexmath/0.9.6/jlatexmath-0.9.6.jar:/root/.m2/repository/org/tcrawley/dynapath/0.2.3/dynapath-0.2.3.jar:/root/.m2/repository/ring/ring-core/1.2.2/ring-core-1.2.2.jar:/root/.m2/repository/grimradical/clj-semver/0.2.0/clj-semver-0.2.0.jar:/root/.m2/repository/watchtower/watchtower/0.1.1/watchtower-0.1.1.jar:/root/.m2/repository/tigris/tigris/0.1.1/tigris-0.1.1.jar:/root/.m2/repository/net/sf/opencsv/opencsv/2.3/opencsv-2.3.jar:/root/.m2/repository/org/apache/xmlbeans/xmlbeans/2.3.0/xmlbeans-2.3.0.jar:/root/.m2/repository/org/clojure/math.combinatorics/0.0.3/math.combinatorics-0.0.3.jar:/root/.m2/repository/net/sourceforge/f2j/arpack_combined_all/0.1/arpack_combined_all-0.1.jar:/root/.m2/repository/xalan/xalan/2.6.0/xalan-2.6.0.jar:/root/.m2/repository/com/lowagie/itext/2.1.7/itext-2.1.7.jar:/root/.m2/repository/org/apache/axis2/axis2-transport-local/1.6.2/axis2-transport-local-1.6.2.jar:/root/.m2/repository/incanter/incanter-latex/1.5.4/incanter-latex-1.5.4.jar:/root/.m2/repository/org/apache/commons/commons-pool2/2.2/commons-pool2-2.2.jar:/root/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.1/jackson-dataformat-smile-2.3.1.jar:/root/.m2/repository/org/clojure/google-closure-library-third-party/0.0-20130212-95c19e7f0f5f/google-closure-library-third-party-0.0-20130212-95c19e7f0f5f.jar:/root/.m2/repository/com/github/rwl/JKLU/1.0.0/JKLU-1.0.0.jar:/root/.m2/repository/org/apache/poi/poi-ooxml-schemas/3.9/poi-ooxml-schemas-3.9.jar:/root/.m2/repository/clojurewerkz/support/0.19.0/support-0.19.0.jar:/root/.m2/repository/clojure-complete/clojure-complete/0.2.3/clojure-complete-0.2.3.jar:/root/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar:/root/.m2/repository/incanter/incanter-zoo/1.5.4/incanter-zoo-1.5.4.jar:/root/.m2/repository/lein-kibit/lein-kibit/0.0.8/lein-kibit-0.0.8.jar:/root/.m2/repository/com/keminglabs/cljx/0.4.0/cljx-0.4.0.jar:/root/.m2/repository/org/clojure/tools.cli/0.2.2/tools.cli-0.2.2.jar:/root/.m2/repository/ring/ring-codec/1.0.0/ring-codec-1.0.0.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.1/jackson-core-2.3.1.jar:/root/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.8.5/jackson-mapper-asl-1.8.5.jar:/root/.m2/repository/org/jsoup/jsoup/1.7.1/jsoup-1.7.1.jar:/root/.m2/repository/com/taoensso/nippy/2.6.3/nippy-2.6.3.jar:/root/.m2/repository/cheshire/cheshire/5.3.1/cheshire-5.3.1.jar:/root/.m2/repository/org/clojure/clojurescript/0.0-2080/clojurescript-0.0-2080.jar:/root/.m2/repository/loom-gorilla/loom-gorilla/0.1.0/loom-gorilla-0.1.0.jar:/root/.m2/repository/org/bouncycastle/bcmail-jdk14/1.38/bcmail-jdk14-1.38.jar:/root/.m2/repository/org/clojure/core.cache/0.6.3/core.cache-0.6.3.jar:/root/.m2/repository/com/novemberain/validateur/1.5.0/validateur-1.5.0.jar:/root/.m2/repository/org/apache/poi/poi-ooxml/3.9/poi-ooxml-3.9.jar:/root/.m2/repository/com/google/protobuf/protobuf-java/2.4.1/protobuf-java-2.4.1.jar:/root/.m2/repository/joda-time/joda-time/2.2/joda-time-2.2.jar:/root/.m2/repository/ch/qos/logback/logback-core/1.1.2/logback-core-1.1.2.jar:/root/.m2/repository/org/clojure/core.match/0.2.0/core.match-0.2.0.jar:/root/.m2/repository/com/tinkerpop/gremlin/gremlin-java/2.2.0/gremlin-java-2.2.0.jar:/root/.m2/repository/org/clojure/data.codec/0.1.0/data.codec-0.1.0.jar:/root/.m2/repository/gavagai/gavagai/0.3.1/gavagai-0.3.1.jar:/root/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.8.5/jackson-core-asl-1.8.5.jar:/root/.m2/repository/org/apache/xmlgraphics/batik-css/1.7/batik-css-1.7.jar:/root/.m2/repository/org/apache/xmlgraphics/batik-ext/1.7/batik-ext-1.7.jar:/root/.m2/repository/org/apache/xmlgraphics/batik-awt-util/1.7/batik-awt-util-1.7.jar:/root/.m2/repository/jline/jline/2.11/jline-2.11.jar:/root/.m2/repository/org/apache/geronimo/specs/geronimo-jta_1.1_spec/1.1/geronimo-jta_1.1_spec-1.1.jar:/root/.m2/repository/com/taoensso/encore/1.7.1/encore-1.7.1.jar:/root/.m2/repository/org/clojure/data.xml/0.0.7/data.xml-0.0.7.jar:/root/.m2/repository/org/clojure/core.incubator/0.1.1/core.incubator-0.1.1.jar:/root/.m2/repository/javax/ws/rs/jsr311-api/1.0/jsr311-api-1.0.jar:/root/.m2/repository/incanter/jcommon/1.0.16/jcommon-1.0.16.jar:/root/.m2/repository/incanter/incanter-excel/1.5.4/incanter-excel-1.5.4.jar:/root/.m2/repository/net/sourceforge/csparsej/csparsej/1.1.1/csparsej-1.1.1.jar:/root/.m2/repository/instaparse/instaparse/1.2.2/instaparse-1.2.2.jar:/root/.m2/repository/net/cgrand/regex/1.1.0/regex-1.1.0.jar:/root/.m2/repository/org/clojure/java.jdbc/0.2.3/java.jdbc-0.2.3.jar:/root/.m2/repository/com/google/javascript/closure-compiler/v20130603/closure-compiler-v20130603.jar:/root/.m2/repository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar:/root/.m2/repository/incanter/incanter-charts/1.5.4/incanter-charts-1.5.4.jar:/root/.m2/repository/com/mysql/connectorj/5.1.12/connectorj-5.1.12.jar:/root/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:/root/.m2/repository/http-kit/http-kit/2.1.18/http-kit-2.1.18.jar:/root/.m2/repository/org/jblas/jblas/1.2.3/jblas-1.2.3.jar:/root/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar:/root/.m2/repository/org/clojure/data.priority-map/0.0.5/data.priority-map-0.0.5.jar:/root/.m2/repository/gorilla-renderable/gorilla-renderable/1.0.0/gorilla-renderable-1.0.0.jar:/root/.m2/repository/com/taoensso/timbre/3.2.1/timbre-3.2.1.jar:/root/.m2/repository/incanter/incanter/1.5.4/incanter-1.5.4.jar:/root/.m2/repository/org/mozilla/rhino/1.7R4/rhino-1.7R4.jar:/root/.m2/repository/org/json/json/20090211/json-20090211.jar:/root/.m2/repository/congomongo/congomongo/0.3.3/congomongo-0.3.3.jar:/root/.m2/repository/incanter/incanter-mongodb/1.5.4/incanter-mongodb-1.5.4.jar:/root/.m2/repository/net/mikera/core.matrix/0.10.0/core.matrix-0.10.0.jar:/root/.m2/repository/clj-time/clj-time/0.5.0/clj-time-0.5.0.jar:/root/.m2/repository/com/googlecode/netlib-java/netlib-java/0.9.3/netlib-java-0.9.3.jar:/root/.m2/repository/com/cemerick/url/0.0.6/url-0.0.6.jar:/root/.m2/repository/bouncycastle/bcprov-jdk14/138/bcprov-jdk14-138.jar:/root/.m2/repository/rplevy-draker/wabbitmq/0.3.0/wabbitmq-0.3.0.jar:/root/.m2/repository/org/clojure/java.classpath/0.2.0/java.classpath-0.2.0.jar:/root/.m2/repository/org/apache/woden/woden-api/1.0M9/woden-api-1.0M9.jar:/root/.m2/repository/cn/guoyukun/jdbc/db2jcc/1.4.2/db2jcc-1.4.2.jar:/root/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/root/.m2/repository/com/ashafa/clutch/0.4.0/clutch-0.4.0.jar:/root/.m2/repository/jonase/kibit/0.0.8/kibit-0.0.8.jar:/root/.m2/repository/org/bouncycastle/bctsp-jdk14/1.38/bctsp-jdk14-1.38.jar:/root/.m2/repository/cider/cider-nrepl/0.7.0/cider-nrepl-0.7.0.jar:/root/.m2/repository/compliment/compliment/0.1.3/compliment-0.1.3.jar:/root/.m2/repository/io/aviso/pretty/0.1.10/pretty-0.1.10.jar:/root/.m2/repository/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar:/root/.m2/repository/org/apache/ws/commons/axiom/axiom-api/1.2.13/axiom-api-1.2.13.jar:/root/.m2/repository/org/apache/xmlgraphics/batik-svggen/1.7/batik-svggen-1.7.jar:/root/.m2/repository/org/apache/ws/commons/schema/XmlSchema/1.4.7/XmlSchema-1.4.7.jar:/root/.m2/repository/bouncycastle/bcmail-jdk14/138/bcmail-jdk14-138.jar:/root/.m2/repository/com/taoensso/carmine/2.7.0/carmine-2.7.0.jar:/root/.m2/repository/org/codehaus/jettison/jettison/1.3/jettison-1.3.jar:/root/.m2/repository/incanter-gorilla/incanter-gorilla/0.1.0/incanter-gorilla-0.1.0.jar:/root/.m2/repository/net/sourceforge/parallelcolt/optimization/1.0/optimization-1.0.jar:/root/.m2/repository/incanter/jfreechart/1.0.13-no-gnujaxp/jfreechart-1.0.13-no-gnujaxp.jar:/root/.m2/repository/commons-fileupload/commons-fileupload/1.3/commons-fileupload-1.3.jar:/root/.m2/repository/com/microsoft/sqljdbc4/3.0/sqljdbc4-3.0.jar:/root/.m2/repository/org/apache/woden/woden-impl-commons/1.0M9/woden-impl-commons-1.0M9.jar:/root/.m2/repository/org/apache/geronimo/specs/geronimo-stax-api_1.0_spec/1.0.1/geronimo-stax-api_1.0_spec-1.0.1.jar:/root/.m2/repository/ragtime/ragtime.core/0.3.4/ragtime.core-0.3.4.jar:/root/.m2/repository/hiccup/hiccup/1.0.5/hiccup-1.0.5.jar:/root/.m2/repository/prismatic/plumbing/0.3.3/plumbing-0.3.3.jar:/root/.m2/repository/potemkin/potemkin/0.3.2/potemkin-0.3.2.jar:/root/.m2/repository/incanter/incanter-pdf/1.5.4/incanter-pdf-1.5.4.jar:/root/.m2/repository/com/tinkerpop/pipes/2.2.0/pipes-2.2.0.jar:/root/.m2/repository/com/github/rwl/BTFJ/1.0.1/BTFJ-1.0.1.jar:/root/.m2/repository/org/codehaus/woodstox/wstx-asl/3.2.9/wstx-asl-3.2.9.jar:/root/.m2/repository/org/apache/woden/woden-impl-dom/1.0M9/woden-impl-dom-1.0M9.jar:/root/.m2/repository/clojurewerkz/urly/2.0.0-alpha5/urly-2.0.0-alpha5.jar:/root/.m2/repository/org/tukaani/xz/1.5/xz-1.5.jar:/root/.m2/repository/fr/grunwald/lazymap/3.1.0/lazymap-3.1.0.jar:/root/.m2/repository/org/apache/geronimo/specs/geronimo-activation_1.1_spec/1.0.2/geronimo-activation_1.1_spec-1.0.2.jar:/root/.m2/repository/ch/qos/logback/logback-classic/1.1.2/logback-classic-1.1.2.jar:/root/.m2/repository/compojure/compojure/1.1.8/compojure-1.1.8.jar:/root/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/root/.m2/repository/org/apache/geronimo/specs/geronimo-javamail_1.4_spec/1.7.1/geronimo-javamail_1.4_spec-1.7.1.jar:/root/.m2/repository/org/clojure/tools.reader/0.8.1/tools.reader-0.8.1.jar:/root/.m2/repository/net/sourceforge/jtransforms/jtransforms/2.4.0/jtransforms-2.4.0.jar:/root/.m2/repository/org/clojure/core.memoize/0.5.6/core.memoize-0.5.6.jar:/root/.m2/repository/incanter/incanter-io/1.5.4/incanter-io-1.5.4.jar:/root/.m2/repository/wsdl4j/wsdl4j/1.6.2/wsdl4j-1.6.2.jar:/root/.m2/repository/expresso/expresso/0.2.0/expresso-0.2.0.jar:/root/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/root/.m2/repository/jaxen/jaxen/1.1.3/jaxen-1.1.3.jar:/root/.m2/repository/net/cgrand/parsley/0.9.1/parsley-0.9.1.jar:/root/.m2/repository/de/kotka/lazymap/3.1.0/lazymap-3.1.0.jar:/root/.m2/repository/args4j/args4j/2.0.16/args4j-2.0.16.jar:/root/.m2/repository/ring/ring-json/0.3.1/ring-json-0.3.1.jar:/root/.m2/repository/clj-blueprints2/clj-blueprints2/0.0.1/clj-blueprints2-0.0.1.jar:/root/.m2/repository/org/danlarkin/clojure-json/1.1/clojure-json-1.1.jar:/root/.m2/repository/org/apache/xmlgraphics/batik-xml/1.7/batik-xml-1.7.jar:/root/.m2/repository/org/apache/xmlgraphics/batik-util/1.7/batik-util-1.7.jar:/root/.m2/repository/gorilla-repl/gorilla-repl/0.3.3/gorilla-repl-0.3.3.jar:/root/.m2/repository/com/google/guava/guava/14.0.1/guava-14.0.1.jar:/root/.m2/repository/net/sourceforge/parallelcolt/parallelcolt/0.10.0/parallelcolt-0.10.0.jar:/root/.m2/repository/org/clojure/data.json/0.2.5/data.json-0.2.5.jar:/root/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/root/.m2/repository/com/tinkerpop/blueprints/blueprints-core/2.2.0/blueprints-core-2.2.0.jar:/root/.m2/repository/cljs-tooling/cljs-tooling/0.1.3/cljs-tooling-0.1.3.jar:/root/.m2/repository/org/apache/geronimo/specs/geronimo-ws-metadata_2.0_spec/1.1.2/geronimo-ws-metadata_2.0_spec-1.1.2.jar:/root/.m2/repository/org/clojure/core.unify/0.5.6/core.unify-0.5.6.jar:/root/.m2/repository/clj-gremlin/clj-gremlin/0.0.3/clj-gremlin-0.0.3.jar:/root/.m2/repository/org/iq80/snappy/snappy/0.3/snappy-0.3.jar:/root/.m2/repository/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar:/root/.m2/repository/xml-apis/xml-apis-ext/1.3.04/xml-apis-ext-1.3.04.jar:/root/.m2/repository/org/apache/neethi/neethi/3.0.2/neethi-3.0.2.jar:/root/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar:/root/.m2/repository/crouton/crouton/0.1.1/crouton-0.1.1.jar:/root/.m2/repository/junit/junit/4.10/junit-4.10.jar:/root/.m2/repository/org/apache/xmlgraphics/batik-dom/1.7/batik-dom-1.7.jar:/root/.m2/repository/com/rabbitmq/amqp-client/2.8.1/amqp-client-2.8.1.jar:/root/.m2/repository/org/clojure/tools.nrepl/0.2.6/tools.nrepl-0.2.6.jar:/root/.m2/repository/org/clojure/tools.trace/0.7.8/tools.trace-0.7.8.jar:/root/.m2/repository/org/clojure/tools.namespace/0.2.5/tools.namespace-0.2.5.jar:/root/.m2/repository/incanter/incanter-sql/1.5.4/incanter-sql-1.5.4.jar:/root/.m2/repository/com/cemerick/piggieback/0.1.3/piggieback-0.1.3.jar:/root/.m2/repository/swingrepl/swingrepl/1.3.0/swingrepl-1.3.0.jar:/root/.m2/repository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar:/root/.m2/repository/com/uswitch/clj-soap/0.2.3/clj-soap-0.2.3.jar:/root/.m2/repository/org/clojure/google-closure-library/0.0-20130212-95c19e7f0f5f/google-closure-library-0.0-20130212-95c19e7f0f5f.jar:/root/.m2/repository/slingshot/slingshot/0.10.3/slingshot-0.10.3.jar:/root/.m2/repository/org/clojure/clojure/1.5.1/clojure-1.5.1.jar:/root/.m2/repository/net/sourceforge/jplasma/jplasma/1.2.0/jplasma-1.2.0.jar:/root/.m2/repository/com/vijaykiran/docjure/1.7.0/docjure-1.7.0.jar:/root/.m2/repository/com/novemberain/monger/1.7.0-beta1/monger-1.7.0-beta1.jar:/root/.m2/repository/clout/clout/1.2.0/clout-1.2.0.jar:/root/.m2/repository/org/apache/axis2/axis2-kernel/1.6.2/axis2-kernel-1.6.2.jar:/root/.m2/repository/com/github/rwl/AMDJ/1.0.1/AMDJ-1.0.1.jar:/root/.m2/repository/incanter/incanter-svg/1.5.4/incanter-svg-1.5.4.jar:/root/.m2/repository/org/apache/ws/commons/axiom/axiom-impl/1.2.13/axiom-impl-1.2.13.jar:/root/.m2/repository/org/apache/axis2/axis2-adb/1.6.2/axis2-adb-1.6.2.jar:/root/.m2/repository/prismatic/schema/0.2.4/schema-0.2.4.jar:/root/.m2/repository/org/mongodb/mongo-java-driver/2.11.2/mongo-java-driver-2.11.2.jar:/root/.m2/repository/org/apache/httpcomponents/httpmime/4.3.1/httpmime-4.3.1.jar:/root/.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar:/root/.m2/repository/pathetic/pathetic/0.4.0/pathetic-0.4.0.jar:/root/.m2/repository/org/apache/poi/poi/3.9/poi-3.9.jar:/root/.m2/repository/org/clojars/trptcolin/sjacket/0.1.0.6/sjacket-0.1.0.6.jar:/root/.m2/repository/clojurewerkz/neocons/2.0.1/neocons-2.0.1.jar:/root/.m2/repository/net/sourceforge/jplasma/core-lapack/0.1/core-lapack-0.1.jar:/root/.m2/repository/com/github/rwl/COLAMDJ/1.0.1/COLAMDJ-1.0.1.jar:/root/.m2/repository/org/apache/axis2/axis2-transport-http/1.6.2/axis2-transport-http-1.6.2.jar:/root/.m2/repository/org/bouncycastle/bcprov-jdk14/1.38/bcprov-jdk14-1.38.jar:/root/.m2/repository/clatrix/clatrix/0.3.0/clatrix-0.3.0.jar&quot;</span>","value":"\"/root/leinProjects/gorilla-test - 0.3.3/test:/root/leinProjects/gorilla-test - 0.3.3/src:/root/leinProjects/gorilla-test - 0.3.3/dev-resources:/root/leinProjects/gorilla-test - 0.3.3/resources:/root/leinProjects/gorilla-test - 0.3.3/target/base+system+user+dev/classes:/root/.m2/repository/concurrent/concurrent/1.3.4/concurrent-1.3.4.jar:/root/.m2/repository/org/clojure/core.logic/0.8.4/core.logic-0.8.4.jar:/root/.m2/repository/clj-http/clj-http/0.7.8/clj-http-0.7.8.jar:/root/.m2/repository/aysylu/loom/0.5.0/loom-0.5.0.jar:/root/.m2/repository/clojureql/clojureql/1.0.4/clojureql-1.0.4.jar:/root/.m2/repository/org/clojure/tools.macro/0.1.0/tools.macro-0.1.0.jar:/root/.m2/repository/cn/guoyukun/jdbc/db2jcc_license_cu/1.4.2/db2jcc_license_cu-1.4.2.jar:/root/.m2/repository/org/apache/james/apache-mime4j-core/0.7.2/apache-mime4j-core-0.7.2.jar:/root/.m2/repository/colt/colt/1.2.0/colt-1.2.0.jar:/root/.m2/repository/incanter/incanter-core/1.5.4/incanter-core-1.5.4.jar:/root/.m2/repository/org/scilab/forge/jlatexmath/0.9.6/jlatexmath-0.9.6.jar:/root/.m2/repository/org/tcrawley/dynapath/0.2.3/dynapath-0.2.3.jar:/root/.m2/repository/ring/ring-core/1.2.2/ring-core-1.2.2.jar:/root/.m2/repository/grimradical/clj-semver/0.2.0/clj-semver-0.2.0.jar:/root/.m2/repository/watchtower/watchtower/0.1.1/watchtower-0.1.1.jar:/root/.m2/repository/tigris/tigris/0.1.1/tigris-0.1.1.jar:/root/.m2/repository/net/sf/opencsv/opencsv/2.3/opencsv-2.3.jar:/root/.m2/repository/org/apache/xmlbeans/xmlbeans/2.3.0/xmlbeans-2.3.0.jar:/root/.m2/repository/org/clojure/math.combinatorics/0.0.3/math.combinatorics-0.0.3.jar:/root/.m2/repository/net/sourceforge/f2j/arpack_combined_all/0.1/arpack_combined_all-0.1.jar:/root/.m2/repository/xalan/xalan/2.6.0/xalan-2.6.0.jar:/root/.m2/repository/com/lowagie/itext/2.1.7/itext-2.1.7.jar:/root/.m2/repository/org/apache/axis2/axis2-transport-local/1.6.2/axis2-transport-local-1.6.2.jar:/root/.m2/repository/incanter/incanter-latex/1.5.4/incanter-latex-1.5.4.jar:/root/.m2/repository/org/apache/commons/commons-pool2/2.2/commons-pool2-2.2.jar:/root/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-smile/2.3.1/jackson-dataformat-smile-2.3.1.jar:/root/.m2/repository/org/clojure/google-closure-library-third-party/0.0-20130212-95c19e7f0f5f/google-closure-library-third-party-0.0-20130212-95c19e7f0f5f.jar:/root/.m2/repository/com/github/rwl/JKLU/1.0.0/JKLU-1.0.0.jar:/root/.m2/repository/org/apache/poi/poi-ooxml-schemas/3.9/poi-ooxml-schemas-3.9.jar:/root/.m2/repository/clojurewerkz/support/0.19.0/support-0.19.0.jar:/root/.m2/repository/clojure-complete/clojure-complete/0.2.3/clojure-complete-0.2.3.jar:/root/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar:/root/.m2/repository/incanter/incanter-zoo/1.5.4/incanter-zoo-1.5.4.jar:/root/.m2/repository/lein-kibit/lein-kibit/0.0.8/lein-kibit-0.0.8.jar:/root/.m2/repository/com/keminglabs/cljx/0.4.0/cljx-0.4.0.jar:/root/.m2/repository/org/clojure/tools.cli/0.2.2/tools.cli-0.2.2.jar:/root/.m2/repository/ring/ring-codec/1.0.0/ring-codec-1.0.0.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.3.1/jackson-core-2.3.1.jar:/root/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.8.5/jackson-mapper-asl-1.8.5.jar:/root/.m2/repository/org/jsoup/jsoup/1.7.1/jsoup-1.7.1.jar:/root/.m2/repository/com/taoensso/nippy/2.6.3/nippy-2.6.3.jar:/root/.m2/repository/cheshire/cheshire/5.3.1/cheshire-5.3.1.jar:/root/.m2/repository/org/clojure/clojurescript/0.0-2080/clojurescript-0.0-2080.jar:/root/.m2/repository/loom-gorilla/loom-gorilla/0.1.0/loom-gorilla-0.1.0.jar:/root/.m2/repository/org/bouncycastle/bcmail-jdk14/1.38/bcmail-jdk14-1.38.jar:/root/.m2/repository/org/clojure/core.cache/0.6.3/core.cache-0.6.3.jar:/root/.m2/repository/com/novemberain/validateur/1.5.0/validateur-1.5.0.jar:/root/.m2/repository/org/apache/poi/poi-ooxml/3.9/poi-ooxml-3.9.jar:/root/.m2/repository/com/google/protobuf/protobuf-java/2.4.1/protobuf-java-2.4.1.jar:/root/.m2/repository/joda-time/joda-time/2.2/joda-time-2.2.jar:/root/.m2/repository/ch/qos/logback/logback-core/1.1.2/logback-core-1.1.2.jar:/root/.m2/repository/org/clojure/core.match/0.2.0/core.match-0.2.0.jar:/root/.m2/repository/com/tinkerpop/gremlin/gremlin-java/2.2.0/gremlin-java-2.2.0.jar:/root/.m2/repository/org/clojure/data.codec/0.1.0/data.codec-0.1.0.jar:/root/.m2/repository/gavagai/gavagai/0.3.1/gavagai-0.3.1.jar:/root/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.8.5/jackson-core-asl-1.8.5.jar:/root/.m2/repository/org/apache/xmlgraphics/batik-css/1.7/batik-css-1.7.jar:/root/.m2/repository/org/apache/xmlgraphics/batik-ext/1.7/batik-ext-1.7.jar:/root/.m2/repository/org/apache/xmlgraphics/batik-awt-util/1.7/batik-awt-util-1.7.jar:/root/.m2/repository/jline/jline/2.11/jline-2.11.jar:/root/.m2/repository/org/apache/geronimo/specs/geronimo-jta_1.1_spec/1.1/geronimo-jta_1.1_spec-1.1.jar:/root/.m2/repository/com/taoensso/encore/1.7.1/encore-1.7.1.jar:/root/.m2/repository/org/clojure/data.xml/0.0.7/data.xml-0.0.7.jar:/root/.m2/repository/org/clojure/core.incubator/0.1.1/core.incubator-0.1.1.jar:/root/.m2/repository/javax/ws/rs/jsr311-api/1.0/jsr311-api-1.0.jar:/root/.m2/repository/incanter/jcommon/1.0.16/jcommon-1.0.16.jar:/root/.m2/repository/incanter/incanter-excel/1.5.4/incanter-excel-1.5.4.jar:/root/.m2/repository/net/sourceforge/csparsej/csparsej/1.1.1/csparsej-1.1.1.jar:/root/.m2/repository/instaparse/instaparse/1.2.2/instaparse-1.2.2.jar:/root/.m2/repository/net/cgrand/regex/1.1.0/regex-1.1.0.jar:/root/.m2/repository/org/clojure/java.jdbc/0.2.3/java.jdbc-0.2.3.jar:/root/.m2/repository/com/google/javascript/closure-compiler/v20130603/closure-compiler-v20130603.jar:/root/.m2/repository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar:/root/.m2/repository/incanter/incanter-charts/1.5.4/incanter-charts-1.5.4.jar:/root/.m2/repository/com/mysql/connectorj/5.1.12/connectorj-5.1.12.jar:/root/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:/root/.m2/repository/http-kit/http-kit/2.1.18/http-kit-2.1.18.jar:/root/.m2/repository/org/jblas/jblas/1.2.3/jblas-1.2.3.jar:/root/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar:/root/.m2/repository/org/clojure/data.priority-map/0.0.5/data.priority-map-0.0.5.jar:/root/.m2/repository/gorilla-renderable/gorilla-renderable/1.0.0/gorilla-renderable-1.0.0.jar:/root/.m2/repository/com/taoensso/timbre/3.2.1/timbre-3.2.1.jar:/root/.m2/repository/incanter/incanter/1.5.4/incanter-1.5.4.jar:/root/.m2/repository/org/mozilla/rhino/1.7R4/rhino-1.7R4.jar:/root/.m2/repository/org/json/json/20090211/json-20090211.jar:/root/.m2/repository/congomongo/congomongo/0.3.3/congomongo-0.3.3.jar:/root/.m2/repository/incanter/incanter-mongodb/1.5.4/incanter-mongodb-1.5.4.jar:/root/.m2/repository/net/mikera/core.matrix/0.10.0/core.matrix-0.10.0.jar:/root/.m2/repository/clj-time/clj-time/0.5.0/clj-time-0.5.0.jar:/root/.m2/repository/com/googlecode/netlib-java/netlib-java/0.9.3/netlib-java-0.9.3.jar:/root/.m2/repository/com/cemerick/url/0.0.6/url-0.0.6.jar:/root/.m2/repository/bouncycastle/bcprov-jdk14/138/bcprov-jdk14-138.jar:/root/.m2/repository/rplevy-draker/wabbitmq/0.3.0/wabbitmq-0.3.0.jar:/root/.m2/repository/org/clojure/java.classpath/0.2.0/java.classpath-0.2.0.jar:/root/.m2/repository/org/apache/woden/woden-api/1.0M9/woden-api-1.0M9.jar:/root/.m2/repository/cn/guoyukun/jdbc/db2jcc/1.4.2/db2jcc-1.4.2.jar:/root/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/root/.m2/repository/com/ashafa/clutch/0.4.0/clutch-0.4.0.jar:/root/.m2/repository/jonase/kibit/0.0.8/kibit-0.0.8.jar:/root/.m2/repository/org/bouncycastle/bctsp-jdk14/1.38/bctsp-jdk14-1.38.jar:/root/.m2/repository/cider/cider-nrepl/0.7.0/cider-nrepl-0.7.0.jar:/root/.m2/repository/compliment/compliment/0.1.3/compliment-0.1.3.jar:/root/.m2/repository/io/aviso/pretty/0.1.10/pretty-0.1.10.jar:/root/.m2/repository/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar:/root/.m2/repository/org/apache/ws/commons/axiom/axiom-api/1.2.13/axiom-api-1.2.13.jar:/root/.m2/repository/org/apache/xmlgraphics/batik-svggen/1.7/batik-svggen-1.7.jar:/root/.m2/repository/org/apache/ws/commons/schema/XmlSchema/1.4.7/XmlSchema-1.4.7.jar:/root/.m2/repository/bouncycastle/bcmail-jdk14/138/bcmail-jdk14-138.jar:/root/.m2/repository/com/taoensso/carmine/2.7.0/carmine-2.7.0.jar:/root/.m2/repository/org/codehaus/jettison/jettison/1.3/jettison-1.3.jar:/root/.m2/repository/incanter-gorilla/incanter-gorilla/0.1.0/incanter-gorilla-0.1.0.jar:/root/.m2/repository/net/sourceforge/parallelcolt/optimization/1.0/optimization-1.0.jar:/root/.m2/repository/incanter/jfreechart/1.0.13-no-gnujaxp/jfreechart-1.0.13-no-gnujaxp.jar:/root/.m2/repository/commons-fileupload/commons-fileupload/1.3/commons-fileupload-1.3.jar:/root/.m2/repository/com/microsoft/sqljdbc4/3.0/sqljdbc4-3.0.jar:/root/.m2/repository/org/apache/woden/woden-impl-commons/1.0M9/woden-impl-commons-1.0M9.jar:/root/.m2/repository/org/apache/geronimo/specs/geronimo-stax-api_1.0_spec/1.0.1/geronimo-stax-api_1.0_spec-1.0.1.jar:/root/.m2/repository/ragtime/ragtime.core/0.3.4/ragtime.core-0.3.4.jar:/root/.m2/repository/hiccup/hiccup/1.0.5/hiccup-1.0.5.jar:/root/.m2/repository/prismatic/plumbing/0.3.3/plumbing-0.3.3.jar:/root/.m2/repository/potemkin/potemkin/0.3.2/potemkin-0.3.2.jar:/root/.m2/repository/incanter/incanter-pdf/1.5.4/incanter-pdf-1.5.4.jar:/root/.m2/repository/com/tinkerpop/pipes/2.2.0/pipes-2.2.0.jar:/root/.m2/repository/com/github/rwl/BTFJ/1.0.1/BTFJ-1.0.1.jar:/root/.m2/repository/org/codehaus/woodstox/wstx-asl/3.2.9/wstx-asl-3.2.9.jar:/root/.m2/repository/org/apache/woden/woden-impl-dom/1.0M9/woden-impl-dom-1.0M9.jar:/root/.m2/repository/clojurewerkz/urly/2.0.0-alpha5/urly-2.0.0-alpha5.jar:/root/.m2/repository/org/tukaani/xz/1.5/xz-1.5.jar:/root/.m2/repository/fr/grunwald/lazymap/3.1.0/lazymap-3.1.0.jar:/root/.m2/repository/org/apache/geronimo/specs/geronimo-activation_1.1_spec/1.0.2/geronimo-activation_1.1_spec-1.0.2.jar:/root/.m2/repository/ch/qos/logback/logback-classic/1.1.2/logback-classic-1.1.2.jar:/root/.m2/repository/compojure/compojure/1.1.8/compojure-1.1.8.jar:/root/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/root/.m2/repository/org/apache/geronimo/specs/geronimo-javamail_1.4_spec/1.7.1/geronimo-javamail_1.4_spec-1.7.1.jar:/root/.m2/repository/org/clojure/tools.reader/0.8.1/tools.reader-0.8.1.jar:/root/.m2/repository/net/sourceforge/jtransforms/jtransforms/2.4.0/jtransforms-2.4.0.jar:/root/.m2/repository/org/clojure/core.memoize/0.5.6/core.memoize-0.5.6.jar:/root/.m2/repository/incanter/incanter-io/1.5.4/incanter-io-1.5.4.jar:/root/.m2/repository/wsdl4j/wsdl4j/1.6.2/wsdl4j-1.6.2.jar:/root/.m2/repository/expresso/expresso/0.2.0/expresso-0.2.0.jar:/root/.m2/repository/org/apache/httpcomponents/httpcore/4.3/httpcore-4.3.jar:/root/.m2/repository/jaxen/jaxen/1.1.3/jaxen-1.1.3.jar:/root/.m2/repository/net/cgrand/parsley/0.9.1/parsley-0.9.1.jar:/root/.m2/repository/de/kotka/lazymap/3.1.0/lazymap-3.1.0.jar:/root/.m2/repository/args4j/args4j/2.0.16/args4j-2.0.16.jar:/root/.m2/repository/ring/ring-json/0.3.1/ring-json-0.3.1.jar:/root/.m2/repository/clj-blueprints2/clj-blueprints2/0.0.1/clj-blueprints2-0.0.1.jar:/root/.m2/repository/org/danlarkin/clojure-json/1.1/clojure-json-1.1.jar:/root/.m2/repository/org/apache/xmlgraphics/batik-xml/1.7/batik-xml-1.7.jar:/root/.m2/repository/org/apache/xmlgraphics/batik-util/1.7/batik-util-1.7.jar:/root/.m2/repository/gorilla-repl/gorilla-repl/0.3.3/gorilla-repl-0.3.3.jar:/root/.m2/repository/com/google/guava/guava/14.0.1/guava-14.0.1.jar:/root/.m2/repository/net/sourceforge/parallelcolt/parallelcolt/0.10.0/parallelcolt-0.10.0.jar:/root/.m2/repository/org/clojure/data.json/0.2.5/data.json-0.2.5.jar:/root/.m2/repository/org/apache/httpcomponents/httpclient/4.3.1/httpclient-4.3.1.jar:/root/.m2/repository/com/tinkerpop/blueprints/blueprints-core/2.2.0/blueprints-core-2.2.0.jar:/root/.m2/repository/cljs-tooling/cljs-tooling/0.1.3/cljs-tooling-0.1.3.jar:/root/.m2/repository/org/apache/geronimo/specs/geronimo-ws-metadata_2.0_spec/1.1.2/geronimo-ws-metadata_2.0_spec-1.1.2.jar:/root/.m2/repository/org/clojure/core.unify/0.5.6/core.unify-0.5.6.jar:/root/.m2/repository/clj-gremlin/clj-gremlin/0.0.3/clj-gremlin-0.0.3.jar:/root/.m2/repository/org/iq80/snappy/snappy/0.3/snappy-0.3.jar:/root/.m2/repository/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar:/root/.m2/repository/xml-apis/xml-apis-ext/1.3.04/xml-apis-ext-1.3.04.jar:/root/.m2/repository/org/apache/neethi/neethi/3.0.2/neethi-3.0.2.jar:/root/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar:/root/.m2/repository/crouton/crouton/0.1.1/crouton-0.1.1.jar:/root/.m2/repository/junit/junit/4.10/junit-4.10.jar:/root/.m2/repository/org/apache/xmlgraphics/batik-dom/1.7/batik-dom-1.7.jar:/root/.m2/repository/com/rabbitmq/amqp-client/2.8.1/amqp-client-2.8.1.jar:/root/.m2/repository/org/clojure/tools.nrepl/0.2.6/tools.nrepl-0.2.6.jar:/root/.m2/repository/org/clojure/tools.trace/0.7.8/tools.trace-0.7.8.jar:/root/.m2/repository/org/clojure/tools.namespace/0.2.5/tools.namespace-0.2.5.jar:/root/.m2/repository/incanter/incanter-sql/1.5.4/incanter-sql-1.5.4.jar:/root/.m2/repository/com/cemerick/piggieback/0.1.3/piggieback-0.1.3.jar:/root/.m2/repository/swingrepl/swingrepl/1.3.0/swingrepl-1.3.0.jar:/root/.m2/repository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar:/root/.m2/repository/com/uswitch/clj-soap/0.2.3/clj-soap-0.2.3.jar:/root/.m2/repository/org/clojure/google-closure-library/0.0-20130212-95c19e7f0f5f/google-closure-library-0.0-20130212-95c19e7f0f5f.jar:/root/.m2/repository/slingshot/slingshot/0.10.3/slingshot-0.10.3.jar:/root/.m2/repository/org/clojure/clojure/1.5.1/clojure-1.5.1.jar:/root/.m2/repository/net/sourceforge/jplasma/jplasma/1.2.0/jplasma-1.2.0.jar:/root/.m2/repository/com/vijaykiran/docjure/1.7.0/docjure-1.7.0.jar:/root/.m2/repository/com/novemberain/monger/1.7.0-beta1/monger-1.7.0-beta1.jar:/root/.m2/repository/clout/clout/1.2.0/clout-1.2.0.jar:/root/.m2/repository/org/apache/axis2/axis2-kernel/1.6.2/axis2-kernel-1.6.2.jar:/root/.m2/repository/com/github/rwl/AMDJ/1.0.1/AMDJ-1.0.1.jar:/root/.m2/repository/incanter/incanter-svg/1.5.4/incanter-svg-1.5.4.jar:/root/.m2/repository/org/apache/ws/commons/axiom/axiom-impl/1.2.13/axiom-impl-1.2.13.jar:/root/.m2/repository/org/apache/axis2/axis2-adb/1.6.2/axis2-adb-1.6.2.jar:/root/.m2/repository/prismatic/schema/0.2.4/schema-0.2.4.jar:/root/.m2/repository/org/mongodb/mongo-java-driver/2.11.2/mongo-java-driver-2.11.2.jar:/root/.m2/repository/org/apache/httpcomponents/httpmime/4.3.1/httpmime-4.3.1.jar:/root/.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar:/root/.m2/repository/pathetic/pathetic/0.4.0/pathetic-0.4.0.jar:/root/.m2/repository/org/apache/poi/poi/3.9/poi-3.9.jar:/root/.m2/repository/org/clojars/trptcolin/sjacket/0.1.0.6/sjacket-0.1.0.6.jar:/root/.m2/repository/clojurewerkz/neocons/2.0.1/neocons-2.0.1.jar:/root/.m2/repository/net/sourceforge/jplasma/core-lapack/0.1/core-lapack-0.1.jar:/root/.m2/repository/com/github/rwl/COLAMDJ/1.0.1/COLAMDJ-1.0.1.jar:/root/.m2/repository/org/apache/axis2/axis2-transport-http/1.6.2/axis2-transport-http-1.6.2.jar:/root/.m2/repository/org/bouncycastle/bcprov-jdk14/1.38/bcprov-jdk14-1.38.jar:/root/.m2/repository/clatrix/clatrix/0.3.0/clatrix-0.3.0.jar\""}
+;;; {"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}
 ;; <=
 
 ;; @@
@@ -134,14 +345,279 @@
 ;; @@
 (def words-file (slurp "data/words"))
 ;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-var'>#&#x27;mongo-example/words-file</span>","value":"#'mongo-example/words-file"}
+;; <=
 
 ;; @@
-(def words (split words-file #"\n"))
+(def words (s/split words-file #"\n"))
 ;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-var'>#&#x27;mongo-example/words</span>","value":"#'mongo-example/words"}
+;; <=
 
 ;; @@
-(count (mass-insert! :words (map #(assoc {} :word % 
-				           :length (count %)
-				           :freq (w2cf %)) 
-				words)))
+(def vowels #{\a \A \e \E \i \I \o \O \u \U})
+;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-var'>#&#x27;mongo-example/vowels</span>","value":"#'mongo-example/vowels"}
+;; <=
+
+;; @@
+(defn filter-vowels 
+  [w] 
+  (apply str 
+         (filter vowels w)))
+;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-var'>#&#x27;mongo-example/filter-vowels</span>","value":"#'mongo-example/filter-vowels"}
+;; <=
+
+;; @@
+(defn remove-vowels 
+  [w] 
+  (apply str 
+         (remove vowels w)))
+;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-var'>#&#x27;mongo-example/remove-vowels</span>","value":"#'mongo-example/remove-vowels"}
+;; <=
+
+;; @@
+(count (mass-insert! :words1 
+                     (map #(assoc {} 
+                                  :word % 
+				                  :length (count %)
+                                  :vowels (filter-vowels %)
+                                  :vcount (count (filter-vowels %))
+                                  :consonants (remove-vowels %)
+                                  :ccount (count (remove-vowels %))
+				                  :freq (w2cf %)
+                                  :vfreq (w2cf (filter-vowels %))
+                                  :cfreq (w2cf (remove-vowels %)))
+				          (take 32000
+                                (drop (fetch-count :words1) 
+                                      words)))))
+;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-unkown'>14936</span>","value":"14936"}
+;; <=
+
+;; @@
+(fetch-count :words1)
+;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-long'>234936</span>","value":"234936"}
+;; <=
+
+;; @@
+(fetch-count :words)
+;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-long'>234936</span>","value":"234936"}
+;; <=
+
+;; @@
+(drop-coll! :words1)
+;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}
+;; <=
+
+;; @@
+(dir somnium.congomongo)
+;; @@
+;; ->
+;;; StringNamed
+;;; add-index!
+;;; aggregate
+;;; authenticate
+;;; calculate-query-options
+;;; close-connection
+;;; collection-exists?
+;;; collections
+;;; command
+;;; connection?
+;;; create-collection!
+;;; databases
+;;; db-ref
+;;; db-ref?
+;;; destroy!
+;;; destroy-file!
+;;; distinct-values
+;;; drop-all-indexes!
+;;; drop-coll!
+;;; drop-database!
+;;; drop-index!
+;;; fetch
+;;; fetch-and-modify
+;;; fetch-by-id
+;;; fetch-by-ids
+;;; fetch-count
+;;; fetch-files
+;;; fetch-one
+;;; fetch-one-file
+;;; get-coll
+;;; get-db
+;;; get-gridfs
+;;; get-indexes
+;;; get-timestamp
+;;; group
+;;; insert!
+;;; insert-file!
+;;; make-connection
+;;; map-reduce
+;;; mass-insert!
+;;; mongo!
+;;; mongo-options
+;;; named
+;;; object-id
+;;; opt!
+;;; query-option-map
+;;; server-eval
+;;; set-connection!
+;;; set-database!
+;;; set-write-concern
+;;; stream-from
+;;; update!
+;;; with-db
+;;; with-mongo
+;;; with-ref-fetching
+;;; write-concern-map
+;;; write-file-to
+;;; 
+;; <-
+;; =>
+;;; {"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}
+;; <=
+
+;; @@
+(doc fetch)
+;; @@
+;; ->
+;;; -------------------------
+;;; somnium.congomongo/fetch
+;;; ([collection :where :only :limit :skip :as :from :one? :count? :sort :options])
+;;;   Fetches objects from a collection.
+;;;    Note that MongoDB always adds the _id and _ns
+;;;    fields to objects returned from the database.
+;;;    Optional arguments include
+;;;    :where   -&gt; takes a query map
+;;;    :only    -&gt; takes an array of keys to retrieve
+;;;    :as      -&gt; what to return, defaults to :clojure, can also be :json or :mongo
+;;;    :from    -&gt; argument type, same options as above
+;;;    :skip    -&gt; number of records to skip
+;;;    :limit   -&gt; number of records to return
+;;;    :one?    -&gt; defaults to false, use fetch-one as a shortcut
+;;;    :count?  -&gt; defaults to false, use fetch-count as a shortcut
+;;;    :sort    -&gt; sort the results by a specific key
+;;;    :options -&gt; query options [:tailable :slaveok :oplogreplay :notimeout :awaitdata]
+;;; 
+;; <-
+;; =>
+;;; {"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}
+;; <=
+
+;; @@
+(pprint (fetch :words1 :where {:word "Aaron"}))
+;; @@
+;; ->
+;;; ({:freq {:a 2, :n 1, :o 1, :r 1},
+;;;   :ccount 2,
+;;;   :word &quot;Aaron&quot;,
+;;;   :vowels &quot;Aao&quot;,
+;;;   :cfreq {:n 1, :r 1},
+;;;   :length 5,
+;;;   :consonants &quot;rn&quot;,
+;;;   :vcount 3,
+;;;   :vfreq {:a 2, :o 1},
+;;;   :_id #&lt;ObjectId 554fa361e4b0f06476478f54&gt;})
+;;; 
+;; <-
+;; =>
+;;; {"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}
+;; <=
+
+;; @@
+(defn mongo-find-matching-words1
+	  [w]
+	  (map :word (fetch :words1 :where {:freq (w2cf w)})))
+;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-var'>#&#x27;mongo-example/mongo-find-matching-words1</span>","value":"#'mongo-example/mongo-find-matching-words1"}
+;; <=
+
+;; @@
+(time (mongo-find-matching-words1 "aeerst"))
+;; @@
+;; ->
+;;; &quot;Elapsed time: 0.362408 msecs&quot;
+;;; 
+;; <-
+;; =>
+;;; {"type":"list-like","open":"<span class='clj-lazy-seq'>(</span>","close":"<span class='clj-lazy-seq'>)</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-string'>&quot;asteer&quot;</span>","value":"\"asteer\""},{"type":"html","content":"<span class='clj-string'>&quot;Easter&quot;</span>","value":"\"Easter\""},{"type":"html","content":"<span class='clj-string'>&quot;easter&quot;</span>","value":"\"easter\""},{"type":"html","content":"<span class='clj-string'>&quot;Eastre&quot;</span>","value":"\"Eastre\""},{"type":"html","content":"<span class='clj-string'>&quot;reseat&quot;</span>","value":"\"reseat\""},{"type":"html","content":"<span class='clj-string'>&quot;saeter&quot;</span>","value":"\"saeter\""},{"type":"html","content":"<span class='clj-string'>&quot;seater&quot;</span>","value":"\"seater\""},{"type":"html","content":"<span class='clj-string'>&quot;staree&quot;</span>","value":"\"staree\""},{"type":"html","content":"<span class='clj-string'>&quot;teaser&quot;</span>","value":"\"teaser\""}],"value":"(\"asteer\" \"Easter\" \"easter\" \"Eastre\" \"reseat\" \"saeter\" \"seater\" \"staree\" \"teaser\")"}
+;; <=
+
+;; @@
+(pprint (fetch :words1 :where {:word "seater"}))
+;; @@
+;; ->
+;;; ({:freq {:a 1, :e 2, :r 1, :s 1, :t 1},
+;;;   :ccount 3,
+;;;   :word &quot;seater&quot;,
+;;;   :vowels &quot;eae&quot;,
+;;;   :cfreq {:r 1, :s 1, :t 1},
+;;;   :length 6,
+;;;   :consonants &quot;str&quot;,
+;;;   :vcount 3,
+;;;   :vfreq {:a 1, :e 2},
+;;;   :_id #&lt;ObjectId 554fbb55e4b0ae7ec9a9ab18&gt;})
+;;; 
+;; <-
+;; =>
+;;; {"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}
+;; <=
+
+;; @@
+(pprint (fetch :words1 :where {:vowels "ee" :consonants "sn"}))
+;; @@
+;; ->
+;;; ({:freq {:e 2, :n 1, :s 1},
+;;;   :ccount 2,
+;;;   :word &quot;esne&quot;,
+;;;   :vowels &quot;ee&quot;,
+;;;   :cfreq {:n 1, :s 1},
+;;;   :length 4,
+;;;   :consonants &quot;sn&quot;,
+;;;   :vcount 2,
+;;;   :vfreq {:e 2},
+;;;   :_id #&lt;ObjectId 554fb0f2e4b0ae7ec9a7f8c2&gt;}
+;;;  {:freq {:e 2, :n 1, :s 1},
+;;;   :ccount 2,
+;;;   :word &quot;seen&quot;,
+;;;   :vowels &quot;ee&quot;,
+;;;   :cfreq {:n 1, :s 1},
+;;;   :length 4,
+;;;   :consonants &quot;sn&quot;,
+;;;   :vcount 2,
+;;;   :vfreq {:e 2},
+;;;   :_id #&lt;ObjectId 554fbb55e4b0ae7ec9a9ac6b&gt;}
+;;;  {:freq {:e 2, :n 1, :s 1},
+;;;   :ccount 2,
+;;;   :word &quot;snee&quot;,
+;;;   :vowels &quot;ee&quot;,
+;;;   :cfreq {:n 1, :s 1},
+;;;   :length 4,
+;;;   :consonants &quot;sn&quot;,
+;;;   :vcount 2,
+;;;   :vfreq {:e 2},
+;;;   :_id #&lt;ObjectId 554fbb57e4b0ae7ec9a9c7bc&gt;})
+;;; 
+;; <-
+;; =>
+;;; {"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}
+;; <=
+
+;; @@
+
 ;; @@

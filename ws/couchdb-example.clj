@@ -27,14 +27,14 @@
 (create! db)
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@20853d8c&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@20853d8c>"}
+;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@3bcca0d6&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@3bcca0d6>"}
 ;; <=
 
 ;; @@
 (:result (meta *1))
 ;; @@
 ;; =>
-;;; {"type":"list-like","open":"<span class='clj-record'>#cemerick.url.URL{</span>","close":"<span class='clj-record'>}</span>","separator":" ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:protocol</span>","value":":protocol"},{"type":"html","content":"<span class='clj-string'>&quot;http&quot;</span>","value":"\"http\""}],"value":"[:protocol \"http\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:username</span>","value":":username"},{"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}],"value":"[:username nil]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:password</span>","value":":password"},{"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}],"value":"[:password nil]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:host</span>","value":":host"},{"type":"html","content":"<span class='clj-string'>&quot;localhost&quot;</span>","value":"\"localhost\""}],"value":"[:host \"localhost\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:port</span>","value":":port"},{"type":"html","content":"<span class='clj-unkown'>5984</span>","value":"5984"}],"value":"[:port 5984]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:path</span>","value":":path"},{"type":"html","content":"<span class='clj-string'>&quot;/test&quot;</span>","value":"\"/test\""}],"value":"[:path \"/test\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:query</span>","value":":query"},{"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}],"value":"[:query nil]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:anchor</span>","value":":anchor"},{"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}],"value":"[:anchor nil]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:disk_format_version</span>","value":":disk_format_version"},{"type":"html","content":"<span class='clj-unkown'>6</span>","value":"6"}],"value":"[:disk_format_version 6]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:db_name</span>","value":":db_name"},{"type":"html","content":"<span class='clj-string'>&quot;test&quot;</span>","value":"\"test\""}],"value":"[:db_name \"test\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:doc_del_count</span>","value":":doc_del_count"},{"type":"html","content":"<span class='clj-unkown'>0</span>","value":"0"}],"value":"[:doc_del_count 0]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:committed_update_seq</span>","value":":committed_update_seq"},{"type":"html","content":"<span class='clj-unkown'>0</span>","value":"0"}],"value":"[:committed_update_seq 0]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:disk_size</span>","value":":disk_size"},{"type":"html","content":"<span class='clj-unkown'>79</span>","value":"79"}],"value":"[:disk_size 79]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:update_seq</span>","value":":update_seq"},{"type":"html","content":"<span class='clj-unkown'>0</span>","value":"0"}],"value":"[:update_seq 0]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:purge_seq</span>","value":":purge_seq"},{"type":"html","content":"<span class='clj-unkown'>0</span>","value":"0"}],"value":"[:purge_seq 0]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:data_size</span>","value":":data_size"},{"type":"html","content":"<span class='clj-unkown'>0</span>","value":"0"}],"value":"[:data_size 0]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:compact_running</span>","value":":compact_running"},{"type":"html","content":"<span class='clj-unkown'>false</span>","value":"false"}],"value":"[:compact_running false]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:instance_start_time</span>","value":":instance_start_time"},{"type":"html","content":"<span class='clj-string'>&quot;1425779102864590&quot;</span>","value":"\"1425779102864590\""}],"value":"[:instance_start_time \"1425779102864590\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:doc_count</span>","value":":doc_count"},{"type":"html","content":"<span class='clj-unkown'>0</span>","value":"0"}],"value":"[:doc_count 0]"}],"value":"#cemerick.url.URL{:protocol \"http\", :username nil, :password nil, :host \"localhost\", :port 5984, :path \"/test\", :query nil, :anchor nil, :disk_format_version 6, :db_name \"test\", :doc_del_count 0, :committed_update_seq 0, :disk_size 79, :update_seq 0, :purge_seq 0, :data_size 0, :compact_running false, :instance_start_time \"1425779102864590\", :doc_count 0}"}
+;;; {"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}
 ;; <=
 
 ;; @@
@@ -42,7 +42,7 @@
                       {:_id (str x) :a [1 2 x]}))
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@7b9ec151&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@7b9ec151>"}
+;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@2ccffb44&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@2ccffb44>"}
 ;; <=
 
 ;; @@
@@ -77,14 +77,21 @@
 (first db)
 ;; @@
 ;; =>
-;;; {"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-string'>&quot;0&quot;</span>","value":"\"0\""},{"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;0&quot;</span>","value":"\"0\""}],"value":"[:_id \"0\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;1-79fe783154bff972172bc30732783a68&quot;</span>","value":"\"1-79fe783154bff972172bc30732783a68\""}],"value":"[:_rev \"1-79fe783154bff972172bc30732783a68\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-unkown'>1</span>","value":"1"},{"type":"html","content":"<span class='clj-unkown'>2</span>","value":"2"},{"type":"html","content":"<span class='clj-unkown'>0</span>","value":"0"}],"value":"[1 2 0]"}],"value":"[:a [1 2 0]]"}],"value":"{:_id \"0\", :_rev \"1-79fe783154bff972172bc30732783a68\", :a [1 2 0]}"}],"value":"[\"0\" {:_id \"0\", :_rev \"1-79fe783154bff972172bc30732783a68\", :a [1 2 0]}]"}
+;;; {"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-string'>&quot;0&quot;</span>","value":"\"0\""},{"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;0&quot;</span>","value":"\"0\""}],"value":"[:_id \"0\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;19-023e148e2843854af7a7b4b6be9ae34e&quot;</span>","value":"\"19-023e148e2843854af7a7b4b6be9ae34e\""}],"value":"[:_rev \"19-023e148e2843854af7a7b4b6be9ae34e\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-unkown'>1</span>","value":"1"},{"type":"html","content":"<span class='clj-unkown'>2</span>","value":"2"},{"type":"html","content":"<span class='clj-unkown'>0</span>","value":"0"}],"value":"[1 2 0]"}],"value":"[:a [1 2 0]]"}],"value":"{:_id \"0\", :_rev \"19-023e148e2843854af7a7b4b6be9ae34e\", :a [1 2 0]}"}],"value":"[\"0\" {:_id \"0\", :_rev \"19-023e148e2843854af7a7b4b6be9ae34e\", :a [1 2 0]}]"}
+;; <=
+
+;; @@
+(first copy)
+;; @@
+;; =>
+;;; {"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-string'>&quot;3630&quot;</span>","value":"\"3630\""},{"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;3630&quot;</span>","value":"\"3630\""}],"value":"[:_id \"3630\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;19-44452d9aaaf2f62dba93dd269c2d4825&quot;</span>","value":"\"19-44452d9aaaf2f62dba93dd269c2d4825\""}],"value":"[:_rev \"19-44452d9aaaf2f62dba93dd269c2d4825\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-unkown'>1</span>","value":"1"},{"type":"html","content":"<span class='clj-unkown'>2</span>","value":"2"},{"type":"html","content":"<span class='clj-unkown'>3630</span>","value":"3630"}],"value":"[1 2 3630]"}],"value":"[:a [1 2 3630]]"}],"value":"{:_id \"3630\", :_rev \"19-44452d9aaaf2f62dba93dd269c2d4825\", :a [1 2 3630]}"}],"value":"[\"3630\" {:_id \"3630\", :_rev \"19-44452d9aaaf2f62dba93dd269c2d4825\", :a [1 2 3630]}]"}
 ;; <=
 
 ;; @@
 (dissoc! db "68")
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@65637ab5&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@65637ab5>"}
+;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@66a3eb31&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@66a3eb31>"}
 ;; <=
 
 ;; @@
@@ -98,21 +105,21 @@
 (assoc! db :foo {:a 6 :b 7})
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@20f38f88&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@20f38f88>"}
+;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@28b0f626&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@28b0f626>"}
 ;; <=
 
 ;; @@
 (:result (meta *1))
 ;; @@
 ;; =>
-;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;1-ac3fe57a7604cfd6dcca06b25204b590&quot;</span>","value":"\"1-ac3fe57a7604cfd6dcca06b25204b590\""}],"value":"[:_rev \"1-ac3fe57a7604cfd6dcca06b25204b590\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;:foo&quot;</span>","value":"\":foo\""}],"value":"[:_id \":foo\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"html","content":"<span class='clj-long'>6</span>","value":"6"}],"value":"[:a 6]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:b</span>","value":":b"},{"type":"html","content":"<span class='clj-long'>7</span>","value":"7"}],"value":"[:b 7]"}],"value":"{:_rev \"1-ac3fe57a7604cfd6dcca06b25204b590\", :_id \":foo\", :a 6, :b 7}"}
+;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;19-efd91ff626987642ea41583f256de47a&quot;</span>","value":"\"19-efd91ff626987642ea41583f256de47a\""}],"value":"[:_rev \"19-efd91ff626987642ea41583f256de47a\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;:foo&quot;</span>","value":"\":foo\""}],"value":"[:_id \":foo\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"html","content":"<span class='clj-long'>6</span>","value":"6"}],"value":"[:a 6]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:b</span>","value":":b"},{"type":"html","content":"<span class='clj-long'>7</span>","value":"7"}],"value":"[:b 7]"}],"value":"{:_rev \"19-efd91ff626987642ea41583f256de47a\", :_id \":foo\", :a 6, :b 7}"}
 ;; <=
 
 ;; @@
 (get db :foo)
 ;; @@
 ;; =>
-;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;:foo&quot;</span>","value":"\":foo\""}],"value":"[:_id \":foo\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;1-ac3fe57a7604cfd6dcca06b25204b590&quot;</span>","value":"\"1-ac3fe57a7604cfd6dcca06b25204b590\""}],"value":"[:_rev \"1-ac3fe57a7604cfd6dcca06b25204b590\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"html","content":"<span class='clj-unkown'>6</span>","value":"6"}],"value":"[:a 6]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:b</span>","value":":b"},{"type":"html","content":"<span class='clj-unkown'>7</span>","value":"7"}],"value":"[:b 7]"}],"value":"{:_id \":foo\", :_rev \"1-ac3fe57a7604cfd6dcca06b25204b590\", :a 6, :b 7}"}
+;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;:foo&quot;</span>","value":"\":foo\""}],"value":"[:_id \":foo\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;19-efd91ff626987642ea41583f256de47a&quot;</span>","value":"\"19-efd91ff626987642ea41583f256de47a\""}],"value":"[:_rev \"19-efd91ff626987642ea41583f256de47a\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"html","content":"<span class='clj-unkown'>6</span>","value":"6"}],"value":"[:a 6]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:b</span>","value":":b"},{"type":"html","content":"<span class='clj-unkown'>7</span>","value":"7"}],"value":"[:b 7]"}],"value":"{:_id \":foo\", :_rev \"19-efd91ff626987642ea41583f256de47a\", :a 6, :b 7}"}
 ;; <=
 
 ;; @@
@@ -121,7 +128,7 @@
                         x))
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@1a29124&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@1a29124>"}
+;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@4ba20903&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@4ba20903>"}
 ;; <=
 
 ;; @@
@@ -186,7 +193,7 @@
 (all-databases)
 ;; @@
 ;; =>
-;;; {"type":"list-like","open":"<span class='clj-lazy-seq'>(</span>","close":"<span class='clj-lazy-seq'>)</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-string'>&quot;_replicator&quot;</span>","value":"\"_replicator\""},{"type":"html","content":"<span class='clj-string'>&quot;_users&quot;</span>","value":"\"_users\""},{"type":"html","content":"<span class='clj-string'>&quot;test&quot;</span>","value":"\"test\""},{"type":"html","content":"<span class='clj-string'>&quot;test_suite_db&quot;</span>","value":"\"test_suite_db\""},{"type":"html","content":"<span class='clj-string'>&quot;test_suite_db2&quot;</span>","value":"\"test_suite_db2\""},{"type":"html","content":"<span class='clj-string'>&quot;wiki&quot;</span>","value":"\"wiki\""}],"value":"(\"_replicator\" \"_users\" \"test\" \"test_suite_db\" \"test_suite_db2\" \"wiki\")"}
+;;; {"type":"list-like","open":"<span class='clj-lazy-seq'>(</span>","close":"<span class='clj-lazy-seq'>)</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-string'>&quot;_replicator&quot;</span>","value":"\"_replicator\""},{"type":"html","content":"<span class='clj-string'>&quot;_users&quot;</span>","value":"\"_users\""},{"type":"html","content":"<span class='clj-string'>&quot;test&quot;</span>","value":"\"test\""},{"type":"html","content":"<span class='clj-string'>&quot;wiki&quot;</span>","value":"\"wiki\""}],"value":"(\"_replicator\" \"_users\" \"test\" \"wiki\")"}
 ;; <=
 
 ;; @@
@@ -200,28 +207,37 @@
 (count db-wiki)
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>2</span>","value":"2"}
+;;; {"type":"html","content":"<span class='clj-unkown'>5</span>","value":"5"}
 ;; <=
 
 ;; @@
 (keys db-wiki)
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>(&quot;MainPage&quot; &quot;TestPage&quot;)</span>","value":"(\"MainPage\" \"TestPage\")"}
+;;; {"type":"html","content":"<span class='clj-unkown'>(&quot;JeffCummings&quot; &quot;MainPage&quot; &quot;NextPage&quot; &quot;TestPage&quot; &quot;WandaCummings&quot;)</span>","value":"(\"JeffCummings\" \"MainPage\" \"NextPage\" \"TestPage\" \"WandaCummings\")"}
 ;; <=
 
 ;; @@
 (pprint (map #(get db-wiki %) (keys db-wiki)))
 ;; @@
 ;; ->
-;;; ({:_id &quot;MainPage&quot;,
-;;;   :_rev &quot;1-33bb4cd4d7ea3ab7494ad5e14ac9a3fc&quot;,
+;;; ({:_id &quot;JeffCummings&quot;,
+;;;   :_rev &quot;10-20cb2c69bee3fd9b586cf5889fb2f4bd&quot;,
+;;;   :content &quot;\r\n\r\nBack to MainPage.&quot;}
+;;;  {:_id &quot;MainPage&quot;,
+;;;   :_rev &quot;4-a514e2e2e29d5f8d49a7455e7e735bf0&quot;,
 ;;;   :content
-;;;   &quot;Hello this is the MainPage. \r\n\r\nClick this to get to TestPage&quot;}
+;;;   &quot;Hello JeffCummings\r\n\r\nHello WandaCummings\r\n\r\nGoto TestPage\r\n\r\nGoto NextPage&quot;}
+;;;  {:_id &quot;NextPage&quot;,
+;;;   :_rev &quot;2-f3e1164c05a57017fb6a8e28da311ec0&quot;,
+;;;   :content &quot;This is NextPage.\r\n\r\nBack to MainPage.&quot;}
 ;;;  {:_id &quot;TestPage&quot;,
-;;;   :_rev &quot;10-4462a9af90a1ed7ebb6e76eba7a2e96e&quot;,
+;;;   :_rev &quot;9-333924b0ec2efdc5345ff861d0d8afa2&quot;,
 ;;;   :content
-;;;   &quot;This is a TestPage.\r\n\r\n---\r\n\r\nThis is a TestPage.\r\n\r\n1. test\r\n2. hello\r\n\r\n---\r\n\r\n- test\r\n\r\n----\r\n\r\nMainPage&quot;})
+;;;   &quot;This is a TestPage.\r\n\r\nGo to NextPage\r\n\r\nAnother test.\r\n\r\n * Test\r\n\r\n# Test\r\n\r\n## Test\r\n\r\n### Test\r\n\r\nBack to MainPage.&quot;}
+;;;  {:_id &quot;WandaCummings&quot;,
+;;;   :_rev &quot;2-e16b8e7be5cc6b2ee87adf0a785b87ae&quot;,
+;;;   :content &quot;Back to MainPage.&quot;})
 ;;; 
 ;; <-
 ;; =>
@@ -242,24 +258,24 @@
 ;;; ({:disk_format_version 6,
 ;;;   :db_name &quot;test&quot;,
 ;;;   :doc_del_count 1,
-;;;   :committed_update_seq 85018,
-;;;   :disk_size 317284465,
-;;;   :update_seq 85018,
+;;;   :committed_update_seq 95020,
+;;;   :disk_size 359010417,
+;;;   :update_seq 95020,
 ;;;   :purge_seq 0,
-;;;   :data_size 3578913,
+;;;   :data_size 3898506,
 ;;;   :compact_running false,
-;;;   :instance_start_time &quot;1423444691727194&quot;,
+;;;   :instance_start_time &quot;1433636961125124&quot;,
 ;;;   :doc_count 5000}
 ;;;  {:disk_format_version 6,
 ;;;   :db_name &quot;wiki&quot;,
 ;;;   :doc_del_count 0,
-;;;   :committed_update_seq 26,
-;;;   :disk_size 106600,
-;;;   :update_seq 26,
+;;;   :committed_update_seq 27,
+;;;   :disk_size 110696,
+;;;   :update_seq 27,
 ;;;   :purge_seq 0,
-;;;   :data_size 1860,
+;;;   :data_size 1890,
 ;;;   :compact_running false,
-;;;   :instance_start_time &quot;1423450082817896&quot;,
+;;;   :instance_start_time &quot;1433637416630020&quot;,
 ;;;   :doc_count 5})
 ;;; 
 ;; <-
@@ -268,17 +284,31 @@
 ;; <=
 
 ;; @@
-(str (java.util.Date. 1423444691727194))
+(str (java.util.Date. ))
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-string'>&quot;Fri Mar 02 02:15:27 EST 47077&quot;</span>","value":"\"Fri Mar 02 02:15:27 EST 47077\""}
+;;; {"type":"html","content":"<span class='clj-string'>&quot;Sat Jun 06 20:39:45 EDT 2015&quot;</span>","value":"\"Sat Jun 06 20:39:45 EDT 2015\""}
 ;; <=
 
 ;; @@
-(str (java.util.Date. 1423450082817896))
+(str (java.util.Date. 1433636961125))
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-string'>&quot;Thu May 03 12:46:57 EDT 47077&quot;</span>","value":"\"Thu May 03 12:46:57 EDT 47077\""}
+;;; {"type":"html","content":"<span class='clj-string'>&quot;Sat Jun 06 20:29:21 EDT 2015&quot;</span>","value":"\"Sat Jun 06 20:29:21 EDT 2015\""}
+;; <=
+
+;; @@
+(str (java.util.Date. 1433637416630))
+;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-string'>&quot;Sat Jun 06 20:36:56 EDT 2015&quot;</span>","value":"\"Sat Jun 06 20:36:56 EDT 2015\""}
+;; <=
+
+;; @@
+(.getTime (java.util.Date.))
+;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-long'>1433637675705</span>","value":"1433637675705"}
 ;; <=
 
 ;; @@

@@ -161,7 +161,7 @@ circumference
 (defn square [x] (* x x))
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-var'>#&#x27;sicp-1/square</span>","value":"#'sicp-1/square"}
+;;; {"type":"html","content":"<span class='clj-var'>#&#x27;test/square</span>","value":"#'test/square"}
 ;; <=
 
 ;; @@
@@ -276,7 +276,7 @@ circumference
     x))
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-var'>#&#x27;sicp-1/abs</span>","value":"#'sicp-1/abs"}
+;;; {"type":"html","content":"<span class='clj-var'>#&#x27;test/abs</span>","value":"#'test/abs"}
 ;; <=
 
 ;; @@
@@ -349,7 +349,8 @@ circumference
 ;; **
 
 ;; @@
-(/ (+ 5 4
+(/ (+ 5 
+      4
       (- 2 
          (- 3 
             (+ 6
@@ -616,6 +617,151 @@ circumference
 ;; <-
 ;; =>
 ;;; {"type":"html","content":"<span class='clj-double'>0.1</span>","value":"0.1"}
+;; <=
+
+;; @@
+
+;; @@
+
+;; **
+;;; ####Exercise 1.8. 
+;;; 
+;;; Newton's method for cube roots is based on the fact that if y is an approximation to the cube root of x, then a better approximation is given by the value:
+;;; 
+;;; $$ \frac{x/y^{2}+ 2y}{3} $$
+;;; 
+;;; Use this formula to implement a cube-root procedure analogous to the square-root procedure. (In section 1.3.4 we will see how to implement Newton's method in general as an abstraction of these square-root and cube-root procedures.)
+;; **
+
+;; @@
+(def guesses (atom []))
+
+(defn reset [a] [])
+
+(defn cube [x] (* x x x))
+
+(defn average [x y]  
+  (/ (+ x y) 2))
+
+(defn improve-cube [guess x]  
+  (average guess (/ (+ (/ x (square guess)) 
+                       (* 2 guess)) 
+                    3)))
+
+(defn good-enough-cube? [guess x]
+  (swap! guesses conj guess)
+  (< (abs (- (cube guess) x)) 0.0001))
+
+(defn cube-rt-iter [guess x]  
+  (if (good-enough-cube? guess x)  
+      [guess @guesses (count @guesses)]
+      (cube-rt-iter (improve-cube guess x)  
+                 x)))
+
+(defn cube-rt [x]
+  (swap! guesses reset)
+  (cube-rt-iter 1.0 x))
+;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-var'>#&#x27;test/cube-rt</span>","value":"#'test/cube-rt"}
+;; <=
+
+;; @@
+(cube-rt 64)
+;; @@
+;; =>
+;;; {"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-double'>4.000001110815228</span>","value":"4.000001110815228"},{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-double'>1.0</span>","value":"1.0"},{"type":"html","content":"<span class='clj-double'>11.5</span>","value":"11.5"},{"type":"html","content":"<span class='clj-double'>9.66398865784499</span>","value":"9.66398865784499"},{"type":"html","content":"<span class='clj-double'>8.167536976552562</span>","value":"8.167536976552562"},{"type":"html","content":"<span class='clj-double'>6.966180092606427</span>","value":"6.966180092606427"},{"type":"html","content":"<span class='clj-double'>6.024955968275684</span>","value":"6.024955968275684"},{"type":"html","content":"<span class='clj-double'>5.314643442481838</span>","value":"5.314643442481838"},{"type":"html","content":"<span class='clj-double'>4.806511681702622</span>","value":"4.806511681702622"},{"type":"html","content":"<span class='clj-double'>4.467135804388524</span>","value":"4.467135804388524"},{"type":"html","content":"<span class='clj-double'>4.257141112274293</span>","value":"4.257141112274293"},{"type":"html","content":"<span class='clj-double'>4.136180152811593</span>","value":"4.136180152811593"},{"type":"html","content":"<span class='clj-double'>4.07030728007468</span>","value":"4.07030728007468"},{"type":"html","content":"<span class='clj-double'>4.0357573601183585</span>","value":"4.0357573601183585"},{"type":"html","content":"<span class='clj-double'>4.018036619763166</span>","value":"4.018036619763166"},{"type":"html","content":"<span class='clj-double'>4.009058731722638</span>","value":"4.009058731722638"},{"type":"html","content":"<span class='clj-double'>4.004539592552768</span>","value":"4.004539592552768"},{"type":"html","content":"<span class='clj-double'>4.0022723683714965</span>","value":"4.0022723683714965"},{"type":"html","content":"<span class='clj-double'>4.001136829154442</span>","value":"4.001136829154442"},{"type":"html","content":"<span class='clj-double'>4.000568576063591</span>","value":"4.000568576063591"},{"type":"html","content":"<span class='clj-double'>4.000284328433981</span>","value":"4.000284328433981"},{"type":"html","content":"<span class='clj-double'>4.000142174321365</span>","value":"4.000142174321365"},{"type":"html","content":"<span class='clj-double'>4.000071089687255</span>","value":"4.000071089687255"},{"type":"html","content":"<span class='clj-double'>4.000035545475331</span>","value":"4.000035545475331"},{"type":"html","content":"<span class='clj-double'>4.000017772895599</span>","value":"4.000017772895599"},{"type":"html","content":"<span class='clj-double'>4.000008886487284</span>","value":"4.000008886487284"},{"type":"html","content":"<span class='clj-double'>4.000004443253513</span>","value":"4.000004443253513"},{"type":"html","content":"<span class='clj-double'>4.000002221629224</span>","value":"4.000002221629224"},{"type":"html","content":"<span class='clj-double'>4.000001110815228</span>","value":"4.000001110815228"}],"value":"[1.0 11.5 9.66398865784499 8.167536976552562 6.966180092606427 6.024955968275684 5.314643442481838 4.806511681702622 4.467135804388524 4.257141112274293 4.136180152811593 4.07030728007468 4.0357573601183585 4.018036619763166 4.009058731722638 4.004539592552768 4.0022723683714965 4.001136829154442 4.000568576063591 4.000284328433981 4.000142174321365 4.000071089687255 4.000035545475331 4.000017772895599 4.000008886487284 4.000004443253513 4.000002221629224 4.000001110815228]"},{"type":"html","content":"<span class='clj-unkown'>28</span>","value":"28"}],"value":"[4.000001110815228 [1.0 11.5 9.66398865784499 8.167536976552562 6.966180092606427 6.024955968275684 5.314643442481838 4.806511681702622 4.467135804388524 4.257141112274293 4.136180152811593 4.07030728007468 4.0357573601183585 4.018036619763166 4.009058731722638 4.004539592552768 4.0022723683714965 4.001136829154442 4.000568576063591 4.000284328433981 4.000142174321365 4.000071089687255 4.000035545475331 4.000017772895599 4.000008886487284 4.000004443253513 4.000002221629224 4.000001110815228] 28]"}
+;; <=
+
+;; **
+;;; ###1.1.8 Procedures as Black-Box Abstractions
+;; **
+
+;; @@
+(defn sqrt [x]  
+  (defn good-enough? [guess x]  
+    (< (abs (- (square guess) x)) 0.001))  
+  (defn improve [guess x]  
+    (average guess (/ x guess)))  
+  (defn sqrt-iter [guess x]  
+    (if (good-enough? guess x)  
+        guess  
+        (sqrt-iter (improve guess x) x)))  
+  (sqrt-iter 1.0 x))
+;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-var'>#&#x27;test/sqrt</span>","value":"#'test/sqrt"}
+;; <=
+
+;; @@
+(sqrt 64)
+;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-double'>8.000001655289593</span>","value":"8.000001655289593"}
+;; <=
+
+;; @@
+(defn sqrt [x]  
+  (defn abs [n]  
+  (if (< n 0)
+    (- n)
+    n))
+  (defn square [n] (* n n))
+  (defn average [n m]  
+  (/ (+ n m) 2))
+  (defn good-enough? [guess]  
+    (< (abs (- (square guess) x)) (/ guess 10000000000000)))  
+  (defn improve [guess] 
+    (average guess (/ x guess)))  
+  (defn sqrt-iter [guess]  
+    (println guess)
+    (if (good-enough? guess)  
+        guess  
+        (sqrt-iter (improve guess))))
+  (defn first-guess [n]
+        (cond
+          (> n 50000000000000) 10000000.0
+          (> n 500000000000) 1000000.0
+          (> n 5000000000) 100000.0
+          (> n 50000000) 10000.0
+          (> n 500000) 1000.0
+          (> n 5000) 100.0
+          (>= n 50) 10.0
+          (< n 0.0000000000005) 0.0000001
+          (< n 0.00000000005) 0.000001
+          (< n 0.000000005) 0.00001
+          (< n 0.0000005) 0.0001
+          (< n 0.00005) 0.001
+          (< n 0.005) 0.01
+          (< n 0.5) 0.1
+          (< n 50) 1.0
+          ))
+  (sqrt-iter (first-guess x)))
+;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-var'>#&#x27;user/sqrt</span>","value":"#'user/sqrt"}
+;; <=
+
+;; @@
+(sqrt 0.00000000000004)
+;; @@
+;; ->
+;;; 1.0E-7
+;;; 2.5000000000000004E-7
+;;; 2.05E-7
+;;; 2.000609756097561E-7
+;;; 2.0000000929222946E-7
+;;; 
+;; <-
+;; =>
+;;; {"type":"html","content":"<span class='clj-double'>2.0000000929222946E-7</span>","value":"2.0000000929222946E-7"}
+;; <=
+
+;; @@
+(System/getProperty "java.version")
+;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-string'>&quot;1.7.0_79&quot;</span>","value":"\"1.7.0_79\""}
 ;; <=
 
 ;; @@

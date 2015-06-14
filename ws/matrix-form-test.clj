@@ -15,8 +15,9 @@
 ;; **
 
 ;; @@
-(use 'clojure.core.matrix)
-(use 'gorilla-renderable.core)
+(ns matrix-form-test
+  (use clojure.core.matrix)
+  (use gorilla-renderable.core))
 ;; @@
 ;; =>
 ;;; {"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}
@@ -30,7 +31,7 @@
 (defrecord MatrixView [contents])
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>user.MatrixView</span>","value":"user.MatrixView"}
+;;; {"type":"html","content":"<span class='clj-class'>matrix_form_test.MatrixView</span>","value":"matrix_form_test.MatrixView"}
 ;; <=
 
 ;; **
@@ -48,7 +49,7 @@
    :value value})
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-var'>#&#x27;user/list-like</span>","value":"#'user/list-like"}
+;;; {"type":"html","content":"<span class='clj-var'>#&#x27;matrix-form-test/list-like</span>","value":"#'matrix-form-test/list-like"}
 ;; <=
 
 ;; @@
@@ -74,7 +75,7 @@
 (defn matrix-view [i] (MatrixView. i))
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-var'>#&#x27;user/matrix-view</span>","value":"#'user/matrix-view"}
+;;; {"type":"html","content":"<span class='clj-var'>#&#x27;matrix-form-test/matrix-view</span>","value":"#'matrix-form-test/matrix-view"}
 ;; <=
 
 ;; **
@@ -87,7 +88,7 @@
 (def i (matrix [[1 2 5] [3 4 5] [1 2 1]]))
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-var'>#&#x27;user/i</span>","value":"#'user/i"}
+;;; {"type":"html","content":"<span class='clj-var'>#&#x27;matrix-form-test/i</span>","value":"#'matrix-form-test/i"}
 ;; <=
 
 ;; **
@@ -98,7 +99,7 @@
 i
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;Matrix33 [[1.0,2.0,5.0],[3.0,4.0,5.0],[1.0,2.0,1.0]]&gt;</span>","value":"#<Matrix33 [[1.0,2.0,5.0],[3.0,4.0,5.0],[1.0,2.0,1.0]]>"}
+;;; {"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-long'>1</span>","value":"1"},{"type":"html","content":"<span class='clj-long'>2</span>","value":"2"},{"type":"html","content":"<span class='clj-long'>5</span>","value":"5"}],"value":"[1 2 5]"},{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-long'>3</span>","value":"3"},{"type":"html","content":"<span class='clj-long'>4</span>","value":"4"},{"type":"html","content":"<span class='clj-long'>5</span>","value":"5"}],"value":"[3 4 5]"},{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-long'>1</span>","value":"1"},{"type":"html","content":"<span class='clj-long'>2</span>","value":"2"},{"type":"html","content":"<span class='clj-long'>1</span>","value":"1"}],"value":"[1 2 1]"}],"value":"[[1 2 5] [3 4 5] [1 2 1]]"}
 ;; <=
 
 ;; **
@@ -109,7 +110,7 @@ i
 (matrix-view i)
 ;; @@
 ;; =>
-;;; {"type":"list-like","open":"<center><table>","close":"</table></center>","separator":"\n","items":[{"type":"list-like","open":"<tr><td>","close":"</td></tr>","separator":"</td><td>","items":[{"type":"html","content":"<span class='clj-double'>1.0</span>","value":"1.0"},{"type":"html","content":"<span class='clj-double'>2.0</span>","value":"2.0"},{"type":"html","content":"<span class='clj-double'>5.0</span>","value":"5.0"}],"value":"#<MatrixRowView [1.0,2.0,5.0]>"},{"type":"list-like","open":"<tr><td>","close":"</td></tr>","separator":"</td><td>","items":[{"type":"html","content":"<span class='clj-double'>3.0</span>","value":"3.0"},{"type":"html","content":"<span class='clj-double'>4.0</span>","value":"4.0"},{"type":"html","content":"<span class='clj-double'>5.0</span>","value":"5.0"}],"value":"#<MatrixRowView [3.0,4.0,5.0]>"},{"type":"list-like","open":"<tr><td>","close":"</td></tr>","separator":"</td><td>","items":[{"type":"html","content":"<span class='clj-double'>1.0</span>","value":"1.0"},{"type":"html","content":"<span class='clj-double'>2.0</span>","value":"2.0"},{"type":"html","content":"<span class='clj-double'>1.0</span>","value":"1.0"}],"value":"#<MatrixRowView [1.0,2.0,1.0]>"}],"value":"#user.MatrixView{:contents #<Matrix33 [[1.0,2.0,5.0],[3.0,4.0,5.0],[1.0,2.0,1.0]]>}"}
+;;; {"type":"list-like","open":"<center><table>","close":"</table></center>","separator":"\n","items":[{"type":"list-like","open":"<tr><td>","close":"</td></tr>","separator":"</td><td>","items":[{"type":"html","content":"<span class='clj-long'>1</span>","value":"1"},{"type":"html","content":"<span class='clj-long'>2</span>","value":"2"},{"type":"html","content":"<span class='clj-long'>5</span>","value":"5"}],"value":"[1 2 5]"},{"type":"list-like","open":"<tr><td>","close":"</td></tr>","separator":"</td><td>","items":[{"type":"html","content":"<span class='clj-long'>3</span>","value":"3"},{"type":"html","content":"<span class='clj-long'>4</span>","value":"4"},{"type":"html","content":"<span class='clj-long'>5</span>","value":"5"}],"value":"[3 4 5]"},{"type":"list-like","open":"<tr><td>","close":"</td></tr>","separator":"</td><td>","items":[{"type":"html","content":"<span class='clj-long'>1</span>","value":"1"},{"type":"html","content":"<span class='clj-long'>2</span>","value":"2"},{"type":"html","content":"<span class='clj-long'>1</span>","value":"1"}],"value":"[1 2 1]"}],"value":"#matrix_form_test.MatrixView{:contents [[1 2 5] [3 4 5] [1 2 1]]}"}
 ;; <=
 
 ;; @@
