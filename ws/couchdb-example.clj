@@ -27,7 +27,7 @@
 (create! db)
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@3bcca0d6&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@3bcca0d6>"}
+;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@64cf643a&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@64cf643a>"}
 ;; <=
 
 ;; @@
@@ -42,7 +42,7 @@
                       {:_id (str x) :a [1 2 x]}))
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@2ccffb44&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@2ccffb44>"}
+;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@79f84af0&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@79f84af0>"}
 ;; <=
 
 ;; @@
@@ -77,21 +77,21 @@
 (first db)
 ;; @@
 ;; =>
-;;; {"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-string'>&quot;0&quot;</span>","value":"\"0\""},{"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;0&quot;</span>","value":"\"0\""}],"value":"[:_id \"0\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;19-023e148e2843854af7a7b4b6be9ae34e&quot;</span>","value":"\"19-023e148e2843854af7a7b4b6be9ae34e\""}],"value":"[:_rev \"19-023e148e2843854af7a7b4b6be9ae34e\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-unkown'>1</span>","value":"1"},{"type":"html","content":"<span class='clj-unkown'>2</span>","value":"2"},{"type":"html","content":"<span class='clj-unkown'>0</span>","value":"0"}],"value":"[1 2 0]"}],"value":"[:a [1 2 0]]"}],"value":"{:_id \"0\", :_rev \"19-023e148e2843854af7a7b4b6be9ae34e\", :a [1 2 0]}"}],"value":"[\"0\" {:_id \"0\", :_rev \"19-023e148e2843854af7a7b4b6be9ae34e\", :a [1 2 0]}]"}
+;;; {"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-string'>&quot;0&quot;</span>","value":"\"0\""},{"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;0&quot;</span>","value":"\"0\""}],"value":"[:_id \"0\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;3-b866d84e9f006dca77ad1c6a0a3c20e8&quot;</span>","value":"\"3-b866d84e9f006dca77ad1c6a0a3c20e8\""}],"value":"[:_rev \"3-b866d84e9f006dca77ad1c6a0a3c20e8\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-unkown'>1</span>","value":"1"},{"type":"html","content":"<span class='clj-unkown'>2</span>","value":"2"},{"type":"html","content":"<span class='clj-unkown'>0</span>","value":"0"}],"value":"[1 2 0]"}],"value":"[:a [1 2 0]]"}],"value":"{:_id \"0\", :_rev \"3-b866d84e9f006dca77ad1c6a0a3c20e8\", :a [1 2 0]}"}],"value":"[\"0\" {:_id \"0\", :_rev \"3-b866d84e9f006dca77ad1c6a0a3c20e8\", :a [1 2 0]}]"}
 ;; <=
 
 ;; @@
 (first copy)
 ;; @@
 ;; =>
-;;; {"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-string'>&quot;3630&quot;</span>","value":"\"3630\""},{"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;3630&quot;</span>","value":"\"3630\""}],"value":"[:_id \"3630\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;19-44452d9aaaf2f62dba93dd269c2d4825&quot;</span>","value":"\"19-44452d9aaaf2f62dba93dd269c2d4825\""}],"value":"[:_rev \"19-44452d9aaaf2f62dba93dd269c2d4825\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-unkown'>1</span>","value":"1"},{"type":"html","content":"<span class='clj-unkown'>2</span>","value":"2"},{"type":"html","content":"<span class='clj-unkown'>3630</span>","value":"3630"}],"value":"[1 2 3630]"}],"value":"[:a [1 2 3630]]"}],"value":"{:_id \"3630\", :_rev \"19-44452d9aaaf2f62dba93dd269c2d4825\", :a [1 2 3630]}"}],"value":"[\"3630\" {:_id \"3630\", :_rev \"19-44452d9aaaf2f62dba93dd269c2d4825\", :a [1 2 3630]}]"}
+;;; {"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-string'>&quot;3630&quot;</span>","value":"\"3630\""},{"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;3630&quot;</span>","value":"\"3630\""}],"value":"[:_id \"3630\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;3-c451228829614825d215ea5a95adb57d&quot;</span>","value":"\"3-c451228829614825d215ea5a95adb57d\""}],"value":"[:_rev \"3-c451228829614825d215ea5a95adb57d\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-unkown'>1</span>","value":"1"},{"type":"html","content":"<span class='clj-unkown'>2</span>","value":"2"},{"type":"html","content":"<span class='clj-unkown'>3630</span>","value":"3630"}],"value":"[1 2 3630]"}],"value":"[:a [1 2 3630]]"}],"value":"{:_id \"3630\", :_rev \"3-c451228829614825d215ea5a95adb57d\", :a [1 2 3630]}"}],"value":"[\"3630\" {:_id \"3630\", :_rev \"3-c451228829614825d215ea5a95adb57d\", :a [1 2 3630]}]"}
 ;; <=
 
 ;; @@
 (dissoc! db "68")
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@66a3eb31&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@66a3eb31>"}
+;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@31aff5d4&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@31aff5d4>"}
 ;; <=
 
 ;; @@
@@ -105,21 +105,21 @@
 (assoc! db :foo {:a 6 :b 7})
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@28b0f626&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@28b0f626>"}
+;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@7627d504&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@7627d504>"}
 ;; <=
 
 ;; @@
 (:result (meta *1))
 ;; @@
 ;; =>
-;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;19-efd91ff626987642ea41583f256de47a&quot;</span>","value":"\"19-efd91ff626987642ea41583f256de47a\""}],"value":"[:_rev \"19-efd91ff626987642ea41583f256de47a\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;:foo&quot;</span>","value":"\":foo\""}],"value":"[:_id \":foo\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"html","content":"<span class='clj-long'>6</span>","value":"6"}],"value":"[:a 6]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:b</span>","value":":b"},{"type":"html","content":"<span class='clj-long'>7</span>","value":"7"}],"value":"[:b 7]"}],"value":"{:_rev \"19-efd91ff626987642ea41583f256de47a\", :_id \":foo\", :a 6, :b 7}"}
+;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;3-caa601a0001bcc9be51fb1d9619c9967&quot;</span>","value":"\"3-caa601a0001bcc9be51fb1d9619c9967\""}],"value":"[:_rev \"3-caa601a0001bcc9be51fb1d9619c9967\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;:foo&quot;</span>","value":"\":foo\""}],"value":"[:_id \":foo\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"html","content":"<span class='clj-long'>6</span>","value":"6"}],"value":"[:a 6]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:b</span>","value":":b"},{"type":"html","content":"<span class='clj-long'>7</span>","value":"7"}],"value":"[:b 7]"}],"value":"{:_rev \"3-caa601a0001bcc9be51fb1d9619c9967\", :_id \":foo\", :a 6, :b 7}"}
 ;; <=
 
 ;; @@
 (get db :foo)
 ;; @@
 ;; =>
-;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;:foo&quot;</span>","value":"\":foo\""}],"value":"[:_id \":foo\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;19-efd91ff626987642ea41583f256de47a&quot;</span>","value":"\"19-efd91ff626987642ea41583f256de47a\""}],"value":"[:_rev \"19-efd91ff626987642ea41583f256de47a\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"html","content":"<span class='clj-unkown'>6</span>","value":"6"}],"value":"[:a 6]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:b</span>","value":":b"},{"type":"html","content":"<span class='clj-unkown'>7</span>","value":"7"}],"value":"[:b 7]"}],"value":"{:_id \":foo\", :_rev \"19-efd91ff626987642ea41583f256de47a\", :a 6, :b 7}"}
+;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;:foo&quot;</span>","value":"\":foo\""}],"value":"[:_id \":foo\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;3-caa601a0001bcc9be51fb1d9619c9967&quot;</span>","value":"\"3-caa601a0001bcc9be51fb1d9619c9967\""}],"value":"[:_rev \"3-caa601a0001bcc9be51fb1d9619c9967\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"html","content":"<span class='clj-unkown'>6</span>","value":"6"}],"value":"[:a 6]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:b</span>","value":":b"},{"type":"html","content":"<span class='clj-unkown'>7</span>","value":"7"}],"value":"[:b 7]"}],"value":"{:_id \":foo\", :_rev \"3-caa601a0001bcc9be51fb1d9619c9967\", :a 6, :b 7}"}
 ;; <=
 
 ;; @@
@@ -128,7 +128,7 @@
                         x))
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@4ba20903&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@4ba20903>"}
+;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@6f6a031c&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@6f6a031c>"}
 ;; <=
 
 ;; @@
@@ -207,37 +207,26 @@
 (count db-wiki)
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>5</span>","value":"5"}
+;;; {"type":"html","content":"<span class='clj-unkown'>2</span>","value":"2"}
 ;; <=
 
 ;; @@
 (keys db-wiki)
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>(&quot;JeffCummings&quot; &quot;MainPage&quot; &quot;NextPage&quot; &quot;TestPage&quot; &quot;WandaCummings&quot;)</span>","value":"(\"JeffCummings\" \"MainPage\" \"NextPage\" \"TestPage\" \"WandaCummings\")"}
+;;; {"type":"html","content":"<span class='clj-unkown'>(&quot;JeffreyCummings&quot; &quot;MainPage&quot;)</span>","value":"(\"JeffreyCummings\" \"MainPage\")"}
 ;; <=
 
 ;; @@
 (pprint (map #(get db-wiki %) (keys db-wiki)))
 ;; @@
 ;; ->
-;;; ({:_id &quot;JeffCummings&quot;,
-;;;   :_rev &quot;10-20cb2c69bee3fd9b586cf5889fb2f4bd&quot;,
-;;;   :content &quot;\r\n\r\nBack to MainPage.&quot;}
+;;; ({:_id &quot;JeffreyCummings&quot;,
+;;;   :_rev &quot;2-a77018252a0968b6a2237640bc23625a&quot;,
+;;;   :content &quot;This is me.\r\n\r\nback to MainPage.&quot;}
 ;;;  {:_id &quot;MainPage&quot;,
-;;;   :_rev &quot;4-a514e2e2e29d5f8d49a7455e7e735bf0&quot;,
-;;;   :content
-;;;   &quot;Hello JeffCummings\r\n\r\nHello WandaCummings\r\n\r\nGoto TestPage\r\n\r\nGoto NextPage&quot;}
-;;;  {:_id &quot;NextPage&quot;,
-;;;   :_rev &quot;2-f3e1164c05a57017fb6a8e28da311ec0&quot;,
-;;;   :content &quot;This is NextPage.\r\n\r\nBack to MainPage.&quot;}
-;;;  {:_id &quot;TestPage&quot;,
-;;;   :_rev &quot;9-333924b0ec2efdc5345ff861d0d8afa2&quot;,
-;;;   :content
-;;;   &quot;This is a TestPage.\r\n\r\nGo to NextPage\r\n\r\nAnother test.\r\n\r\n * Test\r\n\r\n# Test\r\n\r\n## Test\r\n\r\n### Test\r\n\r\nBack to MainPage.&quot;}
-;;;  {:_id &quot;WandaCummings&quot;,
-;;;   :_rev &quot;2-e16b8e7be5cc6b2ee87adf0a785b87ae&quot;,
-;;;   :content &quot;Back to MainPage.&quot;})
+;;;   :_rev &quot;2-4b1448ea9de259fe8f9e715e4a188ae8&quot;,
+;;;   :content &quot;This is a test.\r\n\r\nJeffreyCummings&quot;})
 ;;; 
 ;; <-
 ;; =>
@@ -248,7 +237,7 @@
 (couchdb-info)
 ;; @@
 ;; =>
-;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:couchdb</span>","value":":couchdb"},{"type":"html","content":"<span class='clj-string'>&quot;Welcome&quot;</span>","value":"\"Welcome\""}],"value":"[:couchdb \"Welcome\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:uuid</span>","value":":uuid"},{"type":"html","content":"<span class='clj-string'>&quot;fbe0714ddbd1f1c136ed74cb7ef8443c&quot;</span>","value":"\"fbe0714ddbd1f1c136ed74cb7ef8443c\""}],"value":"[:uuid \"fbe0714ddbd1f1c136ed74cb7ef8443c\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:version</span>","value":":version"},{"type":"html","content":"<span class='clj-string'>&quot;1.5.0&quot;</span>","value":"\"1.5.0\""}],"value":"[:version \"1.5.0\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:vendor</span>","value":":vendor"},{"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:name</span>","value":":name"},{"type":"html","content":"<span class='clj-string'>&quot;Ubuntu&quot;</span>","value":"\"Ubuntu\""}],"value":"[:name \"Ubuntu\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:version</span>","value":":version"},{"type":"html","content":"<span class='clj-string'>&quot;14.04&quot;</span>","value":"\"14.04\""}],"value":"[:version \"14.04\"]"}],"value":"{:name \"Ubuntu\", :version \"14.04\"}"}],"value":"[:vendor {:name \"Ubuntu\", :version \"14.04\"}]"}],"value":"{:couchdb \"Welcome\", :uuid \"fbe0714ddbd1f1c136ed74cb7ef8443c\", :version \"1.5.0\", :vendor {:name \"Ubuntu\", :version \"14.04\"}}"}
+;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:couchdb</span>","value":":couchdb"},{"type":"html","content":"<span class='clj-string'>&quot;Welcome&quot;</span>","value":"\"Welcome\""}],"value":"[:couchdb \"Welcome\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:uuid</span>","value":":uuid"},{"type":"html","content":"<span class='clj-string'>&quot;44171a1a11a250e5448e594983fe3278&quot;</span>","value":"\"44171a1a11a250e5448e594983fe3278\""}],"value":"[:uuid \"44171a1a11a250e5448e594983fe3278\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:version</span>","value":":version"},{"type":"html","content":"<span class='clj-string'>&quot;1.6.1&quot;</span>","value":"\"1.6.1\""}],"value":"[:version \"1.6.1\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:vendor</span>","value":":vendor"},{"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:version</span>","value":":version"},{"type":"html","content":"<span class='clj-string'>&quot;1.6.1&quot;</span>","value":"\"1.6.1\""}],"value":"[:version \"1.6.1\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:name</span>","value":":name"},{"type":"html","content":"<span class='clj-string'>&quot;The Apache Software Foundation&quot;</span>","value":"\"The Apache Software Foundation\""}],"value":"[:name \"The Apache Software Foundation\"]"}],"value":"{:version \"1.6.1\", :name \"The Apache Software Foundation\"}"}],"value":"[:vendor {:version \"1.6.1\", :name \"The Apache Software Foundation\"}]"}],"value":"{:couchdb \"Welcome\", :uuid \"44171a1a11a250e5448e594983fe3278\", :version \"1.6.1\", :vendor {:version \"1.6.1\", :name \"The Apache Software Foundation\"}}"}
 ;; <=
 
 ;; @@
@@ -258,25 +247,25 @@
 ;;; ({:disk_format_version 6,
 ;;;   :db_name &quot;test&quot;,
 ;;;   :doc_del_count 1,
-;;;   :committed_update_seq 95020,
-;;;   :disk_size 359010417,
-;;;   :update_seq 95020,
+;;;   :committed_update_seq 5002,
+;;;   :disk_size 13258865,
+;;;   :update_seq 5002,
 ;;;   :purge_seq 0,
-;;;   :data_size 3898506,
+;;;   :data_size 791696,
 ;;;   :compact_running false,
-;;;   :instance_start_time &quot;1433636961125124&quot;,
+;;;   :instance_start_time &quot;1439172451797540&quot;,
 ;;;   :doc_count 5000}
 ;;;  {:disk_format_version 6,
 ;;;   :db_name &quot;wiki&quot;,
 ;;;   :doc_del_count 0,
-;;;   :committed_update_seq 27,
-;;;   :disk_size 110696,
-;;;   :update_seq 27,
+;;;   :committed_update_seq 4,
+;;;   :disk_size 16479,
+;;;   :update_seq 4,
 ;;;   :purge_seq 0,
-;;;   :data_size 1890,
+;;;   :data_size 555,
 ;;;   :compact_running false,
-;;;   :instance_start_time &quot;1433637416630020&quot;,
-;;;   :doc_count 5})
+;;;   :instance_start_time &quot;1439172488172540&quot;,
+;;;   :doc_count 2})
 ;;; 
 ;; <-
 ;; =>
@@ -291,24 +280,24 @@
 ;; <=
 
 ;; @@
-(str (java.util.Date. 1433636961125))
+(str (java.util.Date. 1436732110082))
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-string'>&quot;Sat Jun 06 20:29:21 EDT 2015&quot;</span>","value":"\"Sat Jun 06 20:29:21 EDT 2015\""}
+;;; {"type":"html","content":"<span class='clj-string'>&quot;Sun Jul 12 16:15:10 EDT 2015&quot;</span>","value":"\"Sun Jul 12 16:15:10 EDT 2015\""}
 ;; <=
 
 ;; @@
-(str (java.util.Date. 1433637416630))
+(str (java.util.Date. 1436751172676))
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-string'>&quot;Sat Jun 06 20:36:56 EDT 2015&quot;</span>","value":"\"Sat Jun 06 20:36:56 EDT 2015\""}
+;;; {"type":"html","content":"<span class='clj-string'>&quot;Sun Jul 12 21:32:52 EDT 2015&quot;</span>","value":"\"Sun Jul 12 21:32:52 EDT 2015\""}
 ;; <=
 
 ;; @@
 (.getTime (java.util.Date.))
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-long'>1433637675705</span>","value":"1433637675705"}
+;;; {"type":"html","content":"<span class='clj-long'>1436751957827</span>","value":"1436751957827"}
 ;; <=
 
 ;; @@

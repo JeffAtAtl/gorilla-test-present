@@ -1,1 +1,2 @@
-lein2 gorilla :port 8994
+lein gorilla :port 8994
+pause
