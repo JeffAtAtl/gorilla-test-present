@@ -1,6 +1,6 @@
 (defproject gorilla-test "0.1.0-SNAPSHOT"
   :description "A test project for the Gorilla REPL."
-  :dependencies [[org.clojure/clojure "1.5.1"]
+  :dependencies [[org.clojure/clojure "1.7.0"]
                  [com.vijaykiran/docjure "1.7.0"]
                  [com.novemberain/monger "1.7.0-beta1"]
                  [incanter "1.5.4"]
@@ -30,6 +30,6 @@
                  [com.uswitch/clj-soap "0.2.3"]]
   :main ^:skip-aot gorilla-test.core
   :target-path "target/%s"
-  :plugins [[lein-gorilla "0.3.4"]
+  :plugins [[lein-gorilla "0.3.5"]
             [lein-localrepo "0.3"]]
   :profiles {:uberjar {:aot :all}})
