@@ -43,7 +43,7 @@
 (pprint (keys (first @(table testdb :words))))
 ;; @@
 ;; ->
-;;; (:word :id)
+;;; (:word :id :length)
 ;;; 
 ;; <-
 ;; =>
@@ -150,7 +150,7 @@
 	 (select (where (= :word "root"))))
 ;; @@
 ;; =>
-;;; {"type":"list-like","open":"<span class='clj-lazy-seq'>(</span>","close":"<span class='clj-lazy-seq'>)</span>","separator":" ","items":[{"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:word</span>","value":":word"},{"type":"html","content":"<span class='clj-string'>&quot;root&quot;</span>","value":"\"root\""}],"value":"[:word \"root\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:id</span>","value":":id"},{"type":"html","content":"<span class='clj-long'>170120</span>","value":"170120"}],"value":"[:id 170120]"}],"value":"{:word \"root\", :id 170120}"}],"value":"({:word \"root\", :id 170120})"}
+;;; {"type":"list-like","open":"<span class='clj-lazy-seq'>(</span>","close":"<span class='clj-lazy-seq'>)</span>","separator":" ","items":[{"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:word</span>","value":":word"},{"type":"html","content":"<span class='clj-string'>&quot;root&quot;</span>","value":"\"root\""}],"value":"[:word \"root\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:id</span>","value":":id"},{"type":"html","content":"<span class='clj-long'>170120</span>","value":"170120"}],"value":"[:id 170120]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:length</span>","value":":length"},{"type":"html","content":"<span class='clj-unkown'>4</span>","value":"4"}],"value":"[:length 4]"}],"value":"{:word \"root\", :id 170120, :length 4}"}],"value":"({:word \"root\", :id 170120, :length 4})"}
 ;; <=
 
 ;; @@
@@ -201,30 +201,30 @@
 (pprint (frequencies (map count words)))
 ;; @@
 ;; ->
-;;; {1 52,
-;;;  2 155,
-;;;  3 1351,
-;;;  4 5110,
-;;;  5 9987,
-;;;  6 17477,
-;;;  7 23734,
-;;;  8 29926,
-;;;  9 32380,
-;;;  10 30867,
-;;;  11 26010,
-;;;  12 20460,
-;;;  13 14937,
-;;;  14 9763,
-;;;  15 5924,
-;;;  16 3377,
-;;;  17 1813,
-;;;  18 842,
-;;;  19 428,
+;;; {7 23734,
 ;;;  20 198,
+;;;  1 52,
+;;;  24 5,
+;;;  4 5110,
+;;;  15 5924,
 ;;;  21 82,
+;;;  13 14937,
 ;;;  22 41,
+;;;  6 17477,
+;;;  17 1813,
+;;;  3 1351,
+;;;  12 20460,
+;;;  2 155,
 ;;;  23 17,
-;;;  24 5}
+;;;  19 428,
+;;;  11 26010,
+;;;  9 32380,
+;;;  5 9987,
+;;;  14 9763,
+;;;  16 3377,
+;;;  10 30867,
+;;;  18 842,
+;;;  8 29926}
 ;;; 
 ;; <-
 ;; =>
@@ -236,7 +236,7 @@
               @(-> (table testdb :words)
 	               (aggregate [[:count/* :as :count]] [[:length/word :as :length]])))
       mem (vals(frequencies (map count words)))]
-  (= db mem))
+  (= (sort db) (sort mem)))
 ;; @@
 ;; =>
 ;;; {"type":"html","content":"<span class='clj-unkown'>true</span>","value":"true"}
