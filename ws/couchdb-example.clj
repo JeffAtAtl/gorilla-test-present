@@ -27,14 +27,14 @@
 (create! db)
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@3bcca0d6&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@3bcca0d6>"}
+;;; {"type":"html","content":"<span class='clj-unkown'>#object[com.ashafa.clutch.CouchDB 0x71b05a13 &quot;com.ashafa.clutch.CouchDB@71b05a13&quot;]</span>","value":"#object[com.ashafa.clutch.CouchDB 0x71b05a13 \"com.ashafa.clutch.CouchDB@71b05a13\"]"}
 ;; <=
 
 ;; @@
 (:result (meta *1))
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}
+;;; {"type":"list-like","open":"<span class='clj-record'>#cemerick.url.URL{</span>","close":"<span class='clj-record'>}</span>","separator":" ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:protocol</span>","value":":protocol"},{"type":"html","content":"<span class='clj-string'>&quot;http&quot;</span>","value":"\"http\""}],"value":"[:protocol \"http\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:username</span>","value":":username"},{"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}],"value":"[:username nil]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:password</span>","value":":password"},{"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}],"value":"[:password nil]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:host</span>","value":":host"},{"type":"html","content":"<span class='clj-string'>&quot;localhost&quot;</span>","value":"\"localhost\""}],"value":"[:host \"localhost\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:port</span>","value":":port"},{"type":"html","content":"<span class='clj-unkown'>5984</span>","value":"5984"}],"value":"[:port 5984]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:path</span>","value":":path"},{"type":"html","content":"<span class='clj-string'>&quot;/test&quot;</span>","value":"\"/test\""}],"value":"[:path \"/test\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:query</span>","value":":query"},{"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}],"value":"[:query nil]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:anchor</span>","value":":anchor"},{"type":"html","content":"<span class='clj-nil'>nil</span>","value":"nil"}],"value":"[:anchor nil]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:update_seq</span>","value":":update_seq"},{"type":"html","content":"<span class='clj-unkown'>50008</span>","value":"50008"}],"value":"[:update_seq 50008]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:committed_update_seq</span>","value":":committed_update_seq"},{"type":"html","content":"<span class='clj-unkown'>50008</span>","value":"50008"}],"value":"[:committed_update_seq 50008]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:compact_running</span>","value":":compact_running"},{"type":"html","content":"<span class='clj-unkown'>false</span>","value":"false"}],"value":"[:compact_running false]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:disk_size</span>","value":":disk_size"},{"type":"html","content":"<span class='clj-unkown'>180433009</span>","value":"180433009"}],"value":"[:disk_size 180433009]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:db_name</span>","value":":db_name"},{"type":"html","content":"<span class='clj-string'>&quot;test&quot;</span>","value":"\"test\""}],"value":"[:db_name \"test\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:disk_format_version</span>","value":":disk_format_version"},{"type":"html","content":"<span class='clj-unkown'>6</span>","value":"6"}],"value":"[:disk_format_version 6]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:data_size</span>","value":":data_size"},{"type":"html","content":"<span class='clj-unkown'>2357282</span>","value":"2357282"}],"value":"[:data_size 2357282]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:instance_start_time</span>","value":":instance_start_time"},{"type":"html","content":"<span class='clj-string'>&quot;1457497305239840&quot;</span>","value":"\"1457497305239840\""}],"value":"[:instance_start_time \"1457497305239840\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:doc_del_count</span>","value":":doc_del_count"},{"type":"html","content":"<span class='clj-unkown'>5001</span>","value":"5001"}],"value":"[:doc_del_count 5001]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:purge_seq</span>","value":":purge_seq"},{"type":"html","content":"<span class='clj-unkown'>0</span>","value":"0"}],"value":"[:purge_seq 0]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:doc_count</span>","value":":doc_count"},{"type":"html","content":"<span class='clj-unkown'>0</span>","value":"0"}],"value":"[:doc_count 0]"}],"value":"#cemerick.url.URL{:protocol \"http\", :username nil, :password nil, :host \"localhost\", :port 5984, :path \"/test\", :query nil, :anchor nil, :update_seq 50008, :committed_update_seq 50008, :compact_running false, :disk_size 180433009, :db_name \"test\", :disk_format_version 6, :data_size 2357282, :instance_start_time \"1457497305239840\", :doc_del_count 5001, :purge_seq 0, :doc_count 0}"}
 ;; <=
 
 ;; @@
@@ -42,7 +42,7 @@
                       {:_id (str x) :a [1 2 x]}))
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@2ccffb44&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@2ccffb44>"}
+;;; {"type":"html","content":"<span class='clj-unkown'>#object[com.ashafa.clutch.CouchDB 0x78841c20 &quot;com.ashafa.clutch.CouchDB@78841c20&quot;]</span>","value":"#object[com.ashafa.clutch.CouchDB 0x78841c20 \"com.ashafa.clutch.CouchDB@78841c20\"]"}
 ;; <=
 
 ;; @@
@@ -84,14 +84,14 @@
 (first copy)
 ;; @@
 ;; =>
-;;; {"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-string'>&quot;3630&quot;</span>","value":"\"3630\""},{"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;3630&quot;</span>","value":"\"3630\""}],"value":"[:_id \"3630\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;19-44452d9aaaf2f62dba93dd269c2d4825&quot;</span>","value":"\"19-44452d9aaaf2f62dba93dd269c2d4825\""}],"value":"[:_rev \"19-44452d9aaaf2f62dba93dd269c2d4825\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-unkown'>1</span>","value":"1"},{"type":"html","content":"<span class='clj-unkown'>2</span>","value":"2"},{"type":"html","content":"<span class='clj-unkown'>3630</span>","value":"3630"}],"value":"[1 2 3630]"}],"value":"[:a [1 2 3630]]"}],"value":"{:_id \"3630\", :_rev \"19-44452d9aaaf2f62dba93dd269c2d4825\", :a [1 2 3630]}"}],"value":"[\"3630\" {:_id \"3630\", :_rev \"19-44452d9aaaf2f62dba93dd269c2d4825\", :a [1 2 3630]}]"}
+;;; {"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-string'>&quot;2828&quot;</span>","value":"\"2828\""},{"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;2828&quot;</span>","value":"\"2828\""}],"value":"[:_id \"2828\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;19-724911efdf9291db8cc88e69ad0146c0&quot;</span>","value":"\"19-724911efdf9291db8cc88e69ad0146c0\""}],"value":"[:_rev \"19-724911efdf9291db8cc88e69ad0146c0\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-unkown'>1</span>","value":"1"},{"type":"html","content":"<span class='clj-unkown'>2</span>","value":"2"},{"type":"html","content":"<span class='clj-unkown'>2828</span>","value":"2828"}],"value":"[1 2 2828]"}],"value":"[:a [1 2 2828]]"}],"value":"{:_id \"2828\", :_rev \"19-724911efdf9291db8cc88e69ad0146c0\", :a [1 2 2828]}"}],"value":"[\"2828\" {:_id \"2828\", :_rev \"19-724911efdf9291db8cc88e69ad0146c0\", :a [1 2 2828]}]"}
 ;; <=
 
 ;; @@
 (dissoc! db "68")
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@66a3eb31&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@66a3eb31>"}
+;;; {"type":"html","content":"<span class='clj-unkown'>#object[com.ashafa.clutch.CouchDB 0x424739e6 &quot;com.ashafa.clutch.CouchDB@424739e6&quot;]</span>","value":"#object[com.ashafa.clutch.CouchDB 0x424739e6 \"com.ashafa.clutch.CouchDB@424739e6\"]"}
 ;; <=
 
 ;; @@
@@ -105,21 +105,28 @@
 (assoc! db :foo {:a 6 :b 7})
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@28b0f626&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@28b0f626>"}
+;;; {"type":"html","content":"<span class='clj-unkown'>#object[com.ashafa.clutch.CouchDB 0x33eb01d6 &quot;com.ashafa.clutch.CouchDB@33eb01d6&quot;]</span>","value":"#object[com.ashafa.clutch.CouchDB 0x33eb01d6 \"com.ashafa.clutch.CouchDB@33eb01d6\"]"}
 ;; <=
 
 ;; @@
 (:result (meta *1))
 ;; @@
 ;; =>
-;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;19-efd91ff626987642ea41583f256de47a&quot;</span>","value":"\"19-efd91ff626987642ea41583f256de47a\""}],"value":"[:_rev \"19-efd91ff626987642ea41583f256de47a\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;:foo&quot;</span>","value":"\":foo\""}],"value":"[:_id \":foo\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"html","content":"<span class='clj-long'>6</span>","value":"6"}],"value":"[:a 6]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:b</span>","value":":b"},{"type":"html","content":"<span class='clj-long'>7</span>","value":"7"}],"value":"[:b 7]"}],"value":"{:_rev \"19-efd91ff626987642ea41583f256de47a\", :_id \":foo\", :a 6, :b 7}"}
+;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"html","content":"<span class='clj-long'>6</span>","value":"6"}],"value":"[:a 6]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:b</span>","value":":b"},{"type":"html","content":"<span class='clj-long'>7</span>","value":"7"}],"value":"[:b 7]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;:foo&quot;</span>","value":"\":foo\""}],"value":"[:_id \":foo\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;15-9b95a20e8119086c0e6221cb74febedc&quot;</span>","value":"\"15-9b95a20e8119086c0e6221cb74febedc\""}],"value":"[:_rev \"15-9b95a20e8119086c0e6221cb74febedc\"]"}],"value":"{:a 6, :b 7, :_id \":foo\", :_rev \"15-9b95a20e8119086c0e6221cb74febedc\"}"}
 ;; <=
 
 ;; @@
 (get db :foo)
 ;; @@
 ;; =>
-;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;:foo&quot;</span>","value":"\":foo\""}],"value":"[:_id \":foo\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;19-efd91ff626987642ea41583f256de47a&quot;</span>","value":"\"19-efd91ff626987642ea41583f256de47a\""}],"value":"[:_rev \"19-efd91ff626987642ea41583f256de47a\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"html","content":"<span class='clj-unkown'>6</span>","value":"6"}],"value":"[:a 6]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:b</span>","value":":b"},{"type":"html","content":"<span class='clj-unkown'>7</span>","value":"7"}],"value":"[:b 7]"}],"value":"{:_id \":foo\", :_rev \"19-efd91ff626987642ea41583f256de47a\", :a 6, :b 7}"}
+;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;:foo&quot;</span>","value":"\":foo\""}],"value":"[:_id \":foo\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;15-9b95a20e8119086c0e6221cb74febedc&quot;</span>","value":"\"15-9b95a20e8119086c0e6221cb74febedc\""}],"value":"[:_rev \"15-9b95a20e8119086c0e6221cb74febedc\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"html","content":"<span class='clj-unkown'>6</span>","value":"6"}],"value":"[:a 6]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:b</span>","value":":b"},{"type":"html","content":"<span class='clj-unkown'>7</span>","value":"7"}],"value":"[:b 7]"}],"value":"{:_id \":foo\", :_rev \"15-9b95a20e8119086c0e6221cb74febedc\", :a 6, :b 7}"}
+;; <=
+
+;; @@
+(count db)
+;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-unkown'>5000</span>","value":"5000"}
 ;; <=
 
 ;; @@
@@ -128,7 +135,7 @@
                         x))
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@4ba20903&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@4ba20903>"}
+;;; {"type":"html","content":"<span class='clj-unkown'>#object[com.ashafa.clutch.CouchDB 0x35fd9314 &quot;com.ashafa.clutch.CouchDB@35fd9314&quot;]</span>","value":"#object[com.ashafa.clutch.CouchDB 0x35fd9314 \"com.ashafa.clutch.CouchDB@35fd9314\"]"}
 ;; <=
 
 ;; @@
@@ -207,37 +214,26 @@
 (count db-wiki)
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>5</span>","value":"5"}
+;;; {"type":"html","content":"<span class='clj-unkown'>2</span>","value":"2"}
 ;; <=
 
 ;; @@
 (keys db-wiki)
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>(&quot;JeffCummings&quot; &quot;MainPage&quot; &quot;NextPage&quot; &quot;TestPage&quot; &quot;WandaCummings&quot;)</span>","value":"(\"JeffCummings\" \"MainPage\" \"NextPage\" \"TestPage\" \"WandaCummings\")"}
+;;; {"type":"html","content":"<span class='clj-unkown'>(&quot;JeffreyCummings&quot; &quot;MainPage&quot;)</span>","value":"(\"JeffreyCummings\" \"MainPage\")"}
 ;; <=
 
 ;; @@
 (pprint (map #(get db-wiki %) (keys db-wiki)))
 ;; @@
 ;; ->
-;;; ({:_id &quot;JeffCummings&quot;,
-;;;   :_rev &quot;10-20cb2c69bee3fd9b586cf5889fb2f4bd&quot;,
-;;;   :content &quot;\r\n\r\nBack to MainPage.&quot;}
+;;; ({:_id &quot;JeffreyCummings&quot;,
+;;;   :_rev &quot;2-a77018252a0968b6a2237640bc23625a&quot;,
+;;;   :content &quot;This is me.\r\n\r\nback to MainPage.&quot;}
 ;;;  {:_id &quot;MainPage&quot;,
-;;;   :_rev &quot;4-a514e2e2e29d5f8d49a7455e7e735bf0&quot;,
-;;;   :content
-;;;   &quot;Hello JeffCummings\r\n\r\nHello WandaCummings\r\n\r\nGoto TestPage\r\n\r\nGoto NextPage&quot;}
-;;;  {:_id &quot;NextPage&quot;,
-;;;   :_rev &quot;2-f3e1164c05a57017fb6a8e28da311ec0&quot;,
-;;;   :content &quot;This is NextPage.\r\n\r\nBack to MainPage.&quot;}
-;;;  {:_id &quot;TestPage&quot;,
-;;;   :_rev &quot;9-333924b0ec2efdc5345ff861d0d8afa2&quot;,
-;;;   :content
-;;;   &quot;This is a TestPage.\r\n\r\nGo to NextPage\r\n\r\nAnother test.\r\n\r\n * Test\r\n\r\n# Test\r\n\r\n## Test\r\n\r\n### Test\r\n\r\nBack to MainPage.&quot;}
-;;;  {:_id &quot;WandaCummings&quot;,
-;;;   :_rev &quot;2-e16b8e7be5cc6b2ee87adf0a785b87ae&quot;,
-;;;   :content &quot;Back to MainPage.&quot;})
+;;;   :_rev &quot;2-4b1448ea9de259fe8f9e715e4a188ae8&quot;,
+;;;   :content &quot;This is a test.\r\n\r\nJeffreyCummings&quot;})
 ;;; 
 ;; <-
 ;; =>
@@ -248,35 +244,35 @@
 (couchdb-info)
 ;; @@
 ;; =>
-;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:couchdb</span>","value":":couchdb"},{"type":"html","content":"<span class='clj-string'>&quot;Welcome&quot;</span>","value":"\"Welcome\""}],"value":"[:couchdb \"Welcome\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:uuid</span>","value":":uuid"},{"type":"html","content":"<span class='clj-string'>&quot;fbe0714ddbd1f1c136ed74cb7ef8443c&quot;</span>","value":"\"fbe0714ddbd1f1c136ed74cb7ef8443c\""}],"value":"[:uuid \"fbe0714ddbd1f1c136ed74cb7ef8443c\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:version</span>","value":":version"},{"type":"html","content":"<span class='clj-string'>&quot;1.5.0&quot;</span>","value":"\"1.5.0\""}],"value":"[:version \"1.5.0\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:vendor</span>","value":":vendor"},{"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:name</span>","value":":name"},{"type":"html","content":"<span class='clj-string'>&quot;Ubuntu&quot;</span>","value":"\"Ubuntu\""}],"value":"[:name \"Ubuntu\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:version</span>","value":":version"},{"type":"html","content":"<span class='clj-string'>&quot;14.04&quot;</span>","value":"\"14.04\""}],"value":"[:version \"14.04\"]"}],"value":"{:name \"Ubuntu\", :version \"14.04\"}"}],"value":"[:vendor {:name \"Ubuntu\", :version \"14.04\"}]"}],"value":"{:couchdb \"Welcome\", :uuid \"fbe0714ddbd1f1c136ed74cb7ef8443c\", :version \"1.5.0\", :vendor {:name \"Ubuntu\", :version \"14.04\"}}"}
+;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:couchdb</span>","value":":couchdb"},{"type":"html","content":"<span class='clj-string'>&quot;Welcome&quot;</span>","value":"\"Welcome\""}],"value":"[:couchdb \"Welcome\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:uuid</span>","value":":uuid"},{"type":"html","content":"<span class='clj-string'>&quot;44171a1a11a250e5448e594983fe3278&quot;</span>","value":"\"44171a1a11a250e5448e594983fe3278\""}],"value":"[:uuid \"44171a1a11a250e5448e594983fe3278\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:version</span>","value":":version"},{"type":"html","content":"<span class='clj-string'>&quot;1.6.1&quot;</span>","value":"\"1.6.1\""}],"value":"[:version \"1.6.1\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:vendor</span>","value":":vendor"},{"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:version</span>","value":":version"},{"type":"html","content":"<span class='clj-string'>&quot;1.6.1&quot;</span>","value":"\"1.6.1\""}],"value":"[:version \"1.6.1\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:name</span>","value":":name"},{"type":"html","content":"<span class='clj-string'>&quot;The Apache Software Foundation&quot;</span>","value":"\"The Apache Software Foundation\""}],"value":"[:name \"The Apache Software Foundation\"]"}],"value":"{:version \"1.6.1\", :name \"The Apache Software Foundation\"}"}],"value":"[:vendor {:version \"1.6.1\", :name \"The Apache Software Foundation\"}]"}],"value":"{:couchdb \"Welcome\", :uuid \"44171a1a11a250e5448e594983fe3278\", :version \"1.6.1\", :vendor {:version \"1.6.1\", :name \"The Apache Software Foundation\"}}"}
 ;; <=
 
 ;; @@
 (pprint (map #(database-info %) [db db-wiki]))
 ;; @@
 ;; ->
-;;; ({:disk_format_version 6,
+;;; ({:update_seq 90014,
+;;;   :committed_update_seq 90014,
+;;;   :compact_running false,
+;;;   :disk_size 338923633,
 ;;;   :db_name &quot;test&quot;,
-;;;   :doc_del_count 1,
-;;;   :committed_update_seq 95020,
-;;;   :disk_size 359010417,
-;;;   :update_seq 95020,
+;;;   :disk_format_version 6,
+;;;   :data_size 3599991,
+;;;   :instance_start_time &quot;1472093641567470&quot;,
+;;;   :doc_del_count 5001,
 ;;;   :purge_seq 0,
-;;;   :data_size 3898506,
+;;;   :doc_count 0}
+;;;  {:update_seq 4,
+;;;   :committed_update_seq 4,
 ;;;   :compact_running false,
-;;;   :instance_start_time &quot;1433636961125124&quot;,
-;;;   :doc_count 5000}
-;;;  {:disk_format_version 6,
+;;;   :disk_size 16479,
 ;;;   :db_name &quot;wiki&quot;,
+;;;   :disk_format_version 6,
+;;;   :data_size 555,
+;;;   :instance_start_time &quot;1472435988851950&quot;,
 ;;;   :doc_del_count 0,
-;;;   :committed_update_seq 27,
-;;;   :disk_size 110696,
-;;;   :update_seq 27,
 ;;;   :purge_seq 0,
-;;;   :data_size 1890,
-;;;   :compact_running false,
-;;;   :instance_start_time &quot;1433637416630020&quot;,
-;;;   :doc_count 5})
+;;;   :doc_count 2})
 ;;; 
 ;; <-
 ;; =>
@@ -284,31 +280,62 @@
 ;; <=
 
 ;; @@
-(str (java.util.Date. ))
+(str (java.util.Date. 1459628027173))
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-string'>&quot;Sat Jun 06 20:39:45 EDT 2015&quot;</span>","value":"\"Sat Jun 06 20:39:45 EDT 2015\""}
+;;; {"type":"html","content":"<span class='clj-string'>&quot;Sat Apr 02 16:13:47 EDT 2016&quot;</span>","value":"\"Sat Apr 02 16:13:47 EDT 2016\""}
 ;; <=
 
 ;; @@
-(str (java.util.Date. 1433636961125))
+(str (java.util.Date. 1459628177095))
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-string'>&quot;Sat Jun 06 20:29:21 EDT 2015&quot;</span>","value":"\"Sat Jun 06 20:29:21 EDT 2015\""}
-;; <=
-
-;; @@
-(str (java.util.Date. 1433637416630))
-;; @@
-;; =>
-;;; {"type":"html","content":"<span class='clj-string'>&quot;Sat Jun 06 20:36:56 EDT 2015&quot;</span>","value":"\"Sat Jun 06 20:36:56 EDT 2015\""}
+;;; {"type":"html","content":"<span class='clj-string'>&quot;Sat Apr 02 16:16:17 EDT 2016&quot;</span>","value":"\"Sat Apr 02 16:16:17 EDT 2016\""}
 ;; <=
 
 ;; @@
 (.getTime (java.util.Date.))
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-long'>1433637675705</span>","value":"1433637675705"}
+;;; {"type":"html","content":"<span class='clj-long'>1472436012496</span>","value":"1472436012496"}
+;; <=
+
+;; @@
+(time (reduce dissoc! db (for [x (keys db)]
+                        x)))
+;; @@
+;; ->
+;;; &quot;Elapsed time: 74433.50803 msecs&quot;
+;;; 
+;; <-
+;; =>
+;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@72fd2ca0&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@72fd2ca0>"}
+;; <=
+
+;; @@
+(count db)
+;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-unkown'>0</span>","value":"0"}
+;; <=
+
+;; @@
+(time (reduce conj! db (for [x (range 5000)]
+                      {:_id (str x) :a [1 2 x]})))
+;; @@
+;; ->
+;;; &quot;Elapsed time: 40544.056437 msecs&quot;
+;;; 
+;; <-
+;; =>
+;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@6d3d5efa&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@6d3d5efa>"}
+;; <=
+
+;; @@
+(count db)
+;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-unkown'>5000</span>","value":"5000"}
 ;; <=
 
 ;; @@

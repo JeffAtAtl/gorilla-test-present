@@ -6,7 +6,7 @@
 
 (defn w2cf
   [w]
-  (frequencies (sort (map #((comp keyword lower str) %) (seq w)))))
+  (frequencies (sort (map (comp keyword lower str) (seq w)))))
 
 (defn find-matching-words
   [w]
