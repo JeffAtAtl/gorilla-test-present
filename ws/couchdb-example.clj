@@ -42,7 +42,7 @@
                       {:_id (str x) :a [1 2 x]}))
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>#object[com.ashafa.clutch.CouchDB 0x7f2b0a4b &quot;com.ashafa.clutch.CouchDB@7f2b0a4b&quot;]</span>","value":"#object[com.ashafa.clutch.CouchDB 0x7f2b0a4b \"com.ashafa.clutch.CouchDB@7f2b0a4b\"]"}
+;;; {"type":"html","content":"<span class='clj-unkown'>#object[com.ashafa.clutch.CouchDB 0x78841c20 &quot;com.ashafa.clutch.CouchDB@78841c20&quot;]</span>","value":"#object[com.ashafa.clutch.CouchDB 0x78841c20 \"com.ashafa.clutch.CouchDB@78841c20\"]"}
 ;; <=
 
 ;; @@
@@ -77,21 +77,21 @@
 (first db)
 ;; @@
 ;; =>
-;;; {"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-string'>&quot;0&quot;</span>","value":"\"0\""},{"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;0&quot;</span>","value":"\"0\""}],"value":"[:_id \"0\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;15-e414eb39fbed243ad01d878a5262373a&quot;</span>","value":"\"15-e414eb39fbed243ad01d878a5262373a\""}],"value":"[:_rev \"15-e414eb39fbed243ad01d878a5262373a\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-unkown'>1</span>","value":"1"},{"type":"html","content":"<span class='clj-unkown'>2</span>","value":"2"},{"type":"html","content":"<span class='clj-unkown'>0</span>","value":"0"}],"value":"[1 2 0]"}],"value":"[:a [1 2 0]]"}],"value":"{:_id \"0\", :_rev \"15-e414eb39fbed243ad01d878a5262373a\", :a [1 2 0]}"}],"value":"[\"0\" {:_id \"0\", :_rev \"15-e414eb39fbed243ad01d878a5262373a\", :a [1 2 0]}]"}
+;;; {"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-string'>&quot;0&quot;</span>","value":"\"0\""},{"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;0&quot;</span>","value":"\"0\""}],"value":"[:_id \"0\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;19-023e148e2843854af7a7b4b6be9ae34e&quot;</span>","value":"\"19-023e148e2843854af7a7b4b6be9ae34e\""}],"value":"[:_rev \"19-023e148e2843854af7a7b4b6be9ae34e\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-unkown'>1</span>","value":"1"},{"type":"html","content":"<span class='clj-unkown'>2</span>","value":"2"},{"type":"html","content":"<span class='clj-unkown'>0</span>","value":"0"}],"value":"[1 2 0]"}],"value":"[:a [1 2 0]]"}],"value":"{:_id \"0\", :_rev \"19-023e148e2843854af7a7b4b6be9ae34e\", :a [1 2 0]}"}],"value":"[\"0\" {:_id \"0\", :_rev \"19-023e148e2843854af7a7b4b6be9ae34e\", :a [1 2 0]}]"}
 ;; <=
 
 ;; @@
 (first copy)
 ;; @@
 ;; =>
-;;; {"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-string'>&quot;2828&quot;</span>","value":"\"2828\""},{"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;2828&quot;</span>","value":"\"2828\""}],"value":"[:_id \"2828\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;15-42e24709843fd6cf5320b81149d810f3&quot;</span>","value":"\"15-42e24709843fd6cf5320b81149d810f3\""}],"value":"[:_rev \"15-42e24709843fd6cf5320b81149d810f3\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-unkown'>1</span>","value":"1"},{"type":"html","content":"<span class='clj-unkown'>2</span>","value":"2"},{"type":"html","content":"<span class='clj-unkown'>2828</span>","value":"2828"}],"value":"[1 2 2828]"}],"value":"[:a [1 2 2828]]"}],"value":"{:_id \"2828\", :_rev \"15-42e24709843fd6cf5320b81149d810f3\", :a [1 2 2828]}"}],"value":"[\"2828\" {:_id \"2828\", :_rev \"15-42e24709843fd6cf5320b81149d810f3\", :a [1 2 2828]}]"}
+;;; {"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-string'>&quot;2828&quot;</span>","value":"\"2828\""},{"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;2828&quot;</span>","value":"\"2828\""}],"value":"[:_id \"2828\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;19-724911efdf9291db8cc88e69ad0146c0&quot;</span>","value":"\"19-724911efdf9291db8cc88e69ad0146c0\""}],"value":"[:_rev \"19-724911efdf9291db8cc88e69ad0146c0\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-unkown'>1</span>","value":"1"},{"type":"html","content":"<span class='clj-unkown'>2</span>","value":"2"},{"type":"html","content":"<span class='clj-unkown'>2828</span>","value":"2828"}],"value":"[1 2 2828]"}],"value":"[:a [1 2 2828]]"}],"value":"{:_id \"2828\", :_rev \"19-724911efdf9291db8cc88e69ad0146c0\", :a [1 2 2828]}"}],"value":"[\"2828\" {:_id \"2828\", :_rev \"19-724911efdf9291db8cc88e69ad0146c0\", :a [1 2 2828]}]"}
 ;; <=
 
 ;; @@
 (dissoc! db "68")
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>#object[com.ashafa.clutch.CouchDB 0x6503cfd &quot;com.ashafa.clutch.CouchDB@6503cfd&quot;]</span>","value":"#object[com.ashafa.clutch.CouchDB 0x6503cfd \"com.ashafa.clutch.CouchDB@6503cfd\"]"}
+;;; {"type":"html","content":"<span class='clj-unkown'>#object[com.ashafa.clutch.CouchDB 0x424739e6 &quot;com.ashafa.clutch.CouchDB@424739e6&quot;]</span>","value":"#object[com.ashafa.clutch.CouchDB 0x424739e6 \"com.ashafa.clutch.CouchDB@424739e6\"]"}
 ;; <=
 
 ;; @@
@@ -105,21 +105,21 @@
 (assoc! db :foo {:a 6 :b 7})
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>#object[com.ashafa.clutch.CouchDB 0x4988d7d4 &quot;com.ashafa.clutch.CouchDB@4988d7d4&quot;]</span>","value":"#object[com.ashafa.clutch.CouchDB 0x4988d7d4 \"com.ashafa.clutch.CouchDB@4988d7d4\"]"}
+;;; {"type":"html","content":"<span class='clj-unkown'>#object[com.ashafa.clutch.CouchDB 0x33eb01d6 &quot;com.ashafa.clutch.CouchDB@33eb01d6&quot;]</span>","value":"#object[com.ashafa.clutch.CouchDB 0x33eb01d6 \"com.ashafa.clutch.CouchDB@33eb01d6\"]"}
 ;; <=
 
 ;; @@
 (:result (meta *1))
 ;; @@
 ;; =>
-;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"html","content":"<span class='clj-long'>6</span>","value":"6"}],"value":"[:a 6]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:b</span>","value":":b"},{"type":"html","content":"<span class='clj-long'>7</span>","value":"7"}],"value":"[:b 7]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;:foo&quot;</span>","value":"\":foo\""}],"value":"[:_id \":foo\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;13-dfa9a61b77363ba9e55c3bb1a3783edc&quot;</span>","value":"\"13-dfa9a61b77363ba9e55c3bb1a3783edc\""}],"value":"[:_rev \"13-dfa9a61b77363ba9e55c3bb1a3783edc\"]"}],"value":"{:a 6, :b 7, :_id \":foo\", :_rev \"13-dfa9a61b77363ba9e55c3bb1a3783edc\"}"}
+;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"html","content":"<span class='clj-long'>6</span>","value":"6"}],"value":"[:a 6]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:b</span>","value":":b"},{"type":"html","content":"<span class='clj-long'>7</span>","value":"7"}],"value":"[:b 7]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;:foo&quot;</span>","value":"\":foo\""}],"value":"[:_id \":foo\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;15-9b95a20e8119086c0e6221cb74febedc&quot;</span>","value":"\"15-9b95a20e8119086c0e6221cb74febedc\""}],"value":"[:_rev \"15-9b95a20e8119086c0e6221cb74febedc\"]"}],"value":"{:a 6, :b 7, :_id \":foo\", :_rev \"15-9b95a20e8119086c0e6221cb74febedc\"}"}
 ;; <=
 
 ;; @@
 (get db :foo)
 ;; @@
 ;; =>
-;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;:foo&quot;</span>","value":"\":foo\""}],"value":"[:_id \":foo\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;13-dfa9a61b77363ba9e55c3bb1a3783edc&quot;</span>","value":"\"13-dfa9a61b77363ba9e55c3bb1a3783edc\""}],"value":"[:_rev \"13-dfa9a61b77363ba9e55c3bb1a3783edc\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"html","content":"<span class='clj-unkown'>6</span>","value":"6"}],"value":"[:a 6]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:b</span>","value":":b"},{"type":"html","content":"<span class='clj-unkown'>7</span>","value":"7"}],"value":"[:b 7]"}],"value":"{:_id \":foo\", :_rev \"13-dfa9a61b77363ba9e55c3bb1a3783edc\", :a 6, :b 7}"}
+;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;:foo&quot;</span>","value":"\":foo\""}],"value":"[:_id \":foo\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;15-9b95a20e8119086c0e6221cb74febedc&quot;</span>","value":"\"15-9b95a20e8119086c0e6221cb74febedc\""}],"value":"[:_rev \"15-9b95a20e8119086c0e6221cb74febedc\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"html","content":"<span class='clj-unkown'>6</span>","value":"6"}],"value":"[:a 6]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:b</span>","value":":b"},{"type":"html","content":"<span class='clj-unkown'>7</span>","value":"7"}],"value":"[:b 7]"}],"value":"{:_id \":foo\", :_rev \"15-9b95a20e8119086c0e6221cb74febedc\", :a 6, :b 7}"}
 ;; <=
 
 ;; @@
@@ -135,7 +135,7 @@
                         x))
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>#object[com.ashafa.clutch.CouchDB 0x718fa57c &quot;com.ashafa.clutch.CouchDB@718fa57c&quot;]</span>","value":"#object[com.ashafa.clutch.CouchDB 0x718fa57c \"com.ashafa.clutch.CouchDB@718fa57c\"]"}
+;;; {"type":"html","content":"<span class='clj-unkown'>#object[com.ashafa.clutch.CouchDB 0x35fd9314 &quot;com.ashafa.clutch.CouchDB@35fd9314&quot;]</span>","value":"#object[com.ashafa.clutch.CouchDB 0x35fd9314 \"com.ashafa.clutch.CouchDB@35fd9314\"]"}
 ;; <=
 
 ;; @@
@@ -251,14 +251,14 @@
 (pprint (map #(database-info %) [db db-wiki]))
 ;; @@
 ;; ->
-;;; ({:update_seq 60010,
-;;;   :committed_update_seq 60010,
+;;; ({:update_seq 90014,
+;;;   :committed_update_seq 90014,
 ;;;   :compact_running false,
-;;;   :disk_size 218501233,
+;;;   :disk_size 338923633,
 ;;;   :db_name &quot;test&quot;,
 ;;;   :disk_format_version 6,
-;;;   :data_size 2660750,
-;;;   :instance_start_time &quot;1459628027173000&quot;,
+;;;   :data_size 3599991,
+;;;   :instance_start_time &quot;1472093641567470&quot;,
 ;;;   :doc_del_count 5001,
 ;;;   :purge_seq 0,
 ;;;   :doc_count 0}
@@ -269,7 +269,7 @@
 ;;;   :db_name &quot;wiki&quot;,
 ;;;   :disk_format_version 6,
 ;;;   :data_size 555,
-;;;   :instance_start_time &quot;1459628177095000&quot;,
+;;;   :instance_start_time &quot;1472435988851950&quot;,
 ;;;   :doc_del_count 0,
 ;;;   :purge_seq 0,
 ;;;   :doc_count 2})
@@ -297,7 +297,7 @@
 (.getTime (java.util.Date.))
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-long'>1459628270896</span>","value":"1459628270896"}
+;;; {"type":"html","content":"<span class='clj-long'>1472436012496</span>","value":"1472436012496"}
 ;; <=
 
 ;; @@

@@ -18,6 +18,15 @@
 (defn split [t s]
   "split s using t"
   (remove (partial = t) 
-               (map (partial apply str) 
-                    (partition-by (partial = (first t) )
-                                  s))))
+          (map (partial apply str) 
+               (partition-by (partial = (first t))
+                             s))))
+
+(fibo 20)
+
+(sqrs 20)
+
+
+
+
+
