@@ -19,6 +19,8 @@
                  [expresso "0.2.0" :exclusions [org.clojure/core.memoize instaparse]]
                  [aysylu/loom "0.6.0"]
                  [loom-gorilla "0.1.0"]
+                 [walmartlabs/datascope "0.1.1"]
+                 [com.walmartlabs/lacinia "0.14.0"]
                  [org.clojure/data.xml "0.0.8"]
                  [incanter-gorilla "0.1.0" :exclusions [xml-apis]]
                  [gorilla-renderable "2.0.0"]
