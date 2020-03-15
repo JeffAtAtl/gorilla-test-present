@@ -171,16 +171,19 @@
         crossed-lkup {[1 3] 2 [3 1] 2 [1 9] 5 [9 1] 5 [1 7] 4 [7 1] 4 [2 8] 5 [8 2] 5 [3 9] 6 [9 3] 6 [4 6] 5 [6 4] 5 [7 9] 8 [9 7] 8}
         ]
     (= 0
-       (count (remove #(< (if (nil? (p-index-map (crossed-lkup %)))
+       (->> crossed-pairs-in-pairs
+            (remove #(< (if (nil? (p-index-map (crossed-lkup %)))
                               9
                               (p-index-map (crossed-lkup %)))
-                          (pairs-index-map %))
-                        crossed-pairs-in-pairs)))))
+                        (pairs-index-map %)))
+            count))))
 
 (defn valid-path
   "Is valid path"
   [p]
-  (and (valid-numbers? p) (no-dup? p) (no-crossed-digits? p))
+  (and (valid-numbers? p)
+       (no-dup? p)
+       (no-crossed-digits? p))
   )
 ;; @@
 ;; =>
@@ -266,7 +269,10 @@
         mr2s (map #(apply str %) mr2)
         mr3 (apply map (comp reverse list) mr2)
         mr3s (map #(apply str %) mr3)]
-    (count (remove false? (map #(.contains % w) (concat ms mrs mr2s mr3s))))))
+    (->> (concat ms mrs mr2s mr3s)
+         (map #(.contains % w))
+         (remove false?)
+         count)))
 ;; @@
 ;; =>
 ;;; {"type":"html","content":"<span class='clj-var'>#&#x27;clojure-code-challenge/count-words-in-matrix</span>","value":"#'clojure-code-challenge/count-words-in-matrix"}
@@ -285,3 +291,4 @@
 ;;;
 ;;; No.
 ;; **
+
