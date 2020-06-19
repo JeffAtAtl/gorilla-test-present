@@ -25,3 +25,5 @@
   (map :word
        (fetch :words3
               :where {:frequency (w2cf w)})))
+
+(w2cf "tar")

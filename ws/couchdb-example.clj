@@ -42,7 +42,11 @@
                       {:_id (str x) :a [1 2 x]}))
 ;; @@
 ;; =>
+<<<<<<< Updated upstream
 ;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@2ccffb44&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@2ccffb44>"}
+=======
+;;; {"type":"html","content":"<span class='clj-unkown'>#object[com.ashafa.clutch.CouchDB 0x78841c20 &quot;com.ashafa.clutch.CouchDB@78841c20&quot;]</span>","value":"#object[com.ashafa.clutch.CouchDB 0x78841c20 \"com.ashafa.clutch.CouchDB@78841c20\"]"}
+>>>>>>> Stashed changes
 ;; <=
 
 ;; @@
@@ -84,14 +88,22 @@
 (first copy)
 ;; @@
 ;; =>
+<<<<<<< Updated upstream
 ;;; {"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-string'>&quot;3630&quot;</span>","value":"\"3630\""},{"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;3630&quot;</span>","value":"\"3630\""}],"value":"[:_id \"3630\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;19-44452d9aaaf2f62dba93dd269c2d4825&quot;</span>","value":"\"19-44452d9aaaf2f62dba93dd269c2d4825\""}],"value":"[:_rev \"19-44452d9aaaf2f62dba93dd269c2d4825\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-unkown'>1</span>","value":"1"},{"type":"html","content":"<span class='clj-unkown'>2</span>","value":"2"},{"type":"html","content":"<span class='clj-unkown'>3630</span>","value":"3630"}],"value":"[1 2 3630]"}],"value":"[:a [1 2 3630]]"}],"value":"{:_id \"3630\", :_rev \"19-44452d9aaaf2f62dba93dd269c2d4825\", :a [1 2 3630]}"}],"value":"[\"3630\" {:_id \"3630\", :_rev \"19-44452d9aaaf2f62dba93dd269c2d4825\", :a [1 2 3630]}]"}
+=======
+;;; {"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-string'>&quot;2828&quot;</span>","value":"\"2828\""},{"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;2828&quot;</span>","value":"\"2828\""}],"value":"[:_id \"2828\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;19-724911efdf9291db8cc88e69ad0146c0&quot;</span>","value":"\"19-724911efdf9291db8cc88e69ad0146c0\""}],"value":"[:_rev \"19-724911efdf9291db8cc88e69ad0146c0\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-unkown'>1</span>","value":"1"},{"type":"html","content":"<span class='clj-unkown'>2</span>","value":"2"},{"type":"html","content":"<span class='clj-unkown'>2828</span>","value":"2828"}],"value":"[1 2 2828]"}],"value":"[:a [1 2 2828]]"}],"value":"{:_id \"2828\", :_rev \"19-724911efdf9291db8cc88e69ad0146c0\", :a [1 2 2828]}"}],"value":"[\"2828\" {:_id \"2828\", :_rev \"19-724911efdf9291db8cc88e69ad0146c0\", :a [1 2 2828]}]"}
+>>>>>>> Stashed changes
 ;; <=
 
 ;; @@
 (dissoc! db "68")
 ;; @@
 ;; =>
+<<<<<<< Updated upstream
 ;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@66a3eb31&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@66a3eb31>"}
+=======
+;;; {"type":"html","content":"<span class='clj-unkown'>#object[com.ashafa.clutch.CouchDB 0x424739e6 &quot;com.ashafa.clutch.CouchDB@424739e6&quot;]</span>","value":"#object[com.ashafa.clutch.CouchDB 0x424739e6 \"com.ashafa.clutch.CouchDB@424739e6\"]"}
+>>>>>>> Stashed changes
 ;; <=
 
 ;; @@
@@ -105,21 +117,40 @@
 (assoc! db :foo {:a 6 :b 7})
 ;; @@
 ;; =>
+<<<<<<< Updated upstream
 ;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@28b0f626&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@28b0f626>"}
+=======
+;;; {"type":"html","content":"<span class='clj-unkown'>#object[com.ashafa.clutch.CouchDB 0x33eb01d6 &quot;com.ashafa.clutch.CouchDB@33eb01d6&quot;]</span>","value":"#object[com.ashafa.clutch.CouchDB 0x33eb01d6 \"com.ashafa.clutch.CouchDB@33eb01d6\"]"}
+>>>>>>> Stashed changes
 ;; <=
 
 ;; @@
 (:result (meta *1))
 ;; @@
 ;; =>
+<<<<<<< Updated upstream
 ;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;19-efd91ff626987642ea41583f256de47a&quot;</span>","value":"\"19-efd91ff626987642ea41583f256de47a\""}],"value":"[:_rev \"19-efd91ff626987642ea41583f256de47a\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;:foo&quot;</span>","value":"\":foo\""}],"value":"[:_id \":foo\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"html","content":"<span class='clj-long'>6</span>","value":"6"}],"value":"[:a 6]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:b</span>","value":":b"},{"type":"html","content":"<span class='clj-long'>7</span>","value":"7"}],"value":"[:b 7]"}],"value":"{:_rev \"19-efd91ff626987642ea41583f256de47a\", :_id \":foo\", :a 6, :b 7}"}
+=======
+;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"html","content":"<span class='clj-long'>6</span>","value":"6"}],"value":"[:a 6]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:b</span>","value":":b"},{"type":"html","content":"<span class='clj-long'>7</span>","value":"7"}],"value":"[:b 7]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;:foo&quot;</span>","value":"\":foo\""}],"value":"[:_id \":foo\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;15-9b95a20e8119086c0e6221cb74febedc&quot;</span>","value":"\"15-9b95a20e8119086c0e6221cb74febedc\""}],"value":"[:_rev \"15-9b95a20e8119086c0e6221cb74febedc\"]"}],"value":"{:a 6, :b 7, :_id \":foo\", :_rev \"15-9b95a20e8119086c0e6221cb74febedc\"}"}
+>>>>>>> Stashed changes
 ;; <=
 
 ;; @@
 (get db :foo)
 ;; @@
 ;; =>
+<<<<<<< Updated upstream
 ;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;:foo&quot;</span>","value":"\":foo\""}],"value":"[:_id \":foo\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;19-efd91ff626987642ea41583f256de47a&quot;</span>","value":"\"19-efd91ff626987642ea41583f256de47a\""}],"value":"[:_rev \"19-efd91ff626987642ea41583f256de47a\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"html","content":"<span class='clj-unkown'>6</span>","value":"6"}],"value":"[:a 6]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:b</span>","value":":b"},{"type":"html","content":"<span class='clj-unkown'>7</span>","value":"7"}],"value":"[:b 7]"}],"value":"{:_id \":foo\", :_rev \"19-efd91ff626987642ea41583f256de47a\", :a 6, :b 7}"}
+=======
+;;; {"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_id</span>","value":":_id"},{"type":"html","content":"<span class='clj-string'>&quot;:foo&quot;</span>","value":"\":foo\""}],"value":"[:_id \":foo\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:_rev</span>","value":":_rev"},{"type":"html","content":"<span class='clj-string'>&quot;15-9b95a20e8119086c0e6221cb74febedc&quot;</span>","value":"\"15-9b95a20e8119086c0e6221cb74febedc\""}],"value":"[:_rev \"15-9b95a20e8119086c0e6221cb74febedc\"]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:a</span>","value":":a"},{"type":"html","content":"<span class='clj-unkown'>6</span>","value":"6"}],"value":"[:a 6]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:b</span>","value":":b"},{"type":"html","content":"<span class='clj-unkown'>7</span>","value":"7"}],"value":"[:b 7]"}],"value":"{:_id \":foo\", :_rev \"15-9b95a20e8119086c0e6221cb74febedc\", :a 6, :b 7}"}
+;; <=
+
+;; @@
+(count db)
+;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-unkown'>5000</span>","value":"5000"}
+>>>>>>> Stashed changes
 ;; <=
 
 ;; @@
@@ -128,7 +159,11 @@
                         x))
 ;; @@
 ;; =>
+<<<<<<< Updated upstream
 ;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@4ba20903&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@4ba20903>"}
+=======
+;;; {"type":"html","content":"<span class='clj-unkown'>#object[com.ashafa.clutch.CouchDB 0x35fd9314 &quot;com.ashafa.clutch.CouchDB@35fd9314&quot;]</span>","value":"#object[com.ashafa.clutch.CouchDB 0x35fd9314 \"com.ashafa.clutch.CouchDB@35fd9314\"]"}
+>>>>>>> Stashed changes
 ;; <=
 
 ;; @@
@@ -221,6 +256,7 @@
 (pprint (map #(get db-wiki %) (keys db-wiki)))
 ;; @@
 ;; ->
+<<<<<<< Updated upstream
 ;;; ({:_id &quot;JeffCummings&quot;,
 ;;;   :_rev &quot;10-20cb2c69bee3fd9b586cf5889fb2f4bd&quot;,
 ;;;   :content &quot;\r\n\r\nBack to MainPage.&quot;}
@@ -238,6 +274,14 @@
 ;;;  {:_id &quot;WandaCummings&quot;,
 ;;;   :_rev &quot;2-e16b8e7be5cc6b2ee87adf0a785b87ae&quot;,
 ;;;   :content &quot;Back to MainPage.&quot;})
+=======
+;;; ({:_id &quot;JeffreyCummings&quot;,
+;;;   :_rev &quot;2-a77018252a0968b6a2237640bc23625a&quot;,
+;;;   :content &quot;This is me.\r\n\r\nback to MainPage.&quot;}
+;;;  {:_id &quot;MainPage&quot;,
+;;;   :_rev &quot;2-4b1448ea9de259fe8f9e715e4a188ae8&quot;,
+;;;   :content &quot;This is a test.\r\n\r\nJeffreyCummings&quot;})
+>>>>>>> Stashed changes
 ;;; 
 ;; <-
 ;; =>
@@ -255,6 +299,7 @@
 (pprint (map #(database-info %) [db db-wiki]))
 ;; @@
 ;; ->
+<<<<<<< Updated upstream
 ;;; ({:disk_format_version 6,
 ;;;   :db_name &quot;test&quot;,
 ;;;   :doc_del_count 1,
@@ -277,6 +322,30 @@
 ;;;   :compact_running false,
 ;;;   :instance_start_time &quot;1433637416630020&quot;,
 ;;;   :doc_count 5})
+=======
+;;; ({:update_seq 90014,
+;;;   :committed_update_seq 90014,
+;;;   :compact_running false,
+;;;   :disk_size 338923633,
+;;;   :db_name &quot;test&quot;,
+;;;   :disk_format_version 6,
+;;;   :data_size 3599991,
+;;;   :instance_start_time &quot;1472093641567470&quot;,
+;;;   :doc_del_count 5001,
+;;;   :purge_seq 0,
+;;;   :doc_count 0}
+;;;  {:update_seq 4,
+;;;   :committed_update_seq 4,
+;;;   :compact_running false,
+;;;   :disk_size 16479,
+;;;   :db_name &quot;wiki&quot;,
+;;;   :disk_format_version 6,
+;;;   :data_size 555,
+;;;   :instance_start_time &quot;1472435988851950&quot;,
+;;;   :doc_del_count 0,
+;;;   :purge_seq 0,
+;;;   :doc_count 2})
+>>>>>>> Stashed changes
 ;;; 
 ;; <-
 ;; =>
@@ -298,14 +367,54 @@
 ;; <=
 
 ;; @@
+<<<<<<< Updated upstream
 (str (java.util.Date. 1433637416630))
 ;; @@
+=======
+(.getTime (java.util.Date.))
+;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-long'>1472436012496</span>","value":"1472436012496"}
+;; <=
+
+;; @@
+(time (reduce dissoc! db (for [x (keys db)]
+                        x)))
+;; @@
+;; ->
+;;; &quot;Elapsed time: 74433.50803 msecs&quot;
+;;; 
+;; <-
+>>>>>>> Stashed changes
 ;; =>
 ;;; {"type":"html","content":"<span class='clj-string'>&quot;Sat Jun 06 20:36:56 EDT 2015&quot;</span>","value":"\"Sat Jun 06 20:36:56 EDT 2015\""}
 ;; <=
 
 ;; @@
+<<<<<<< Updated upstream
 (.getTime (java.util.Date.))
+=======
+(count db)
+;; @@
+;; =>
+;;; {"type":"html","content":"<span class='clj-unkown'>0</span>","value":"0"}
+;; <=
+
+;; @@
+(time (reduce conj! db (for [x (range 5000)]
+                      {:_id (str x) :a [1 2 x]})))
+;; @@
+;; ->
+;;; &quot;Elapsed time: 40544.056437 msecs&quot;
+;;; 
+;; <-
+;; =>
+;;; {"type":"html","content":"<span class='clj-unkown'>#&lt;CouchDB com.ashafa.clutch.CouchDB@6d3d5efa&gt;</span>","value":"#<CouchDB com.ashafa.clutch.CouchDB@6d3d5efa>"}
+;; <=
+
+;; @@
+(count db)
+>>>>>>> Stashed changes
 ;; @@
 ;; =>
 ;;; {"type":"html","content":"<span class='clj-long'>1433637675705</span>","value":"1433637675705"}
