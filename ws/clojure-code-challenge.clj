@@ -96,10 +96,10 @@
 (defn ttt [board]
   "Get winner for tic-tac-toe board."
     (check
-      (map set board)
-      (map set (apply map list board))
-      (list (set (map #(nth (nth board %) %) (range 3))))
-      (list (set (map #(nth (nth board %) (- 2 %)) (range 3))))))
+      (map set board)                                              ;; horizontal
+      (map set (apply map list board))                             ;; vertical
+      (list (set (map #(nth (nth board %) %) (range 3))))          ;; diaginal tl to br
+      (list (set (map #(nth (nth board %) (- 2 %)) (range 3))))))  ;; diaginal tr to bl
 
 (assert (= :x (ttt [[:x :o :x] [:x :o :o] [:x :x :o]])))
 (assert (= :o (ttt [[:o :x :x] [:x :o :x] [:x :o :o]])))
@@ -110,7 +110,15 @@
 ;; <=
 
 ;; **
-;;; ###Code Writing 1
+;;; ###Rationale
+;;; 
+;;; Clojure code can be very beautiful, and very ugly. 
+;;; It is important to be able to puzzle out other people’s code and to provide constructive feedback, no matter how badly the code in question offends your sensibilities
+;;; 
+;; **
+
+;; **
+;;; ##Code Writing 1
 ;;; 
 ;;; Android has a pattern lock screen with 9 dots:
 ;;; 
@@ -125,7 +133,8 @@
 ;;; Each dot may only be used once
 ;;; Dots must be connected with straight lines
 ;;; A dot may not be crossed without being used
-;;; Task
+;;; 
+;;; ###Task
 ;;; 
 ;;; Write a function in any language that takes a sequence of numbers representing dots to connect and determines if it represents a valid pattern.
 ;;; 
@@ -262,17 +271,17 @@
 (defn count-words-in-matrix
   "Takes a matrix of characters and a word, and returns the number of times that word appears in the matrix."
   [m w]
-  (let [ms (map #(apply str %) m)
-        mr (apply map (comp reverse list) m)
-        mrs (map #(apply str %) mr)
-        mr2 (apply map (comp reverse list) mr)
-        mr2s (map #(apply str %) mr2)
-        mr3 (apply map (comp reverse list) mr2)
-        mr3s (map #(apply str %) mr3)]
-    (->> (concat ms mrs mr2s mr3s)
-         (map #(.contains % w))
-         (remove false?)
-         count)))
+  (let [ms (map #(apply str %) m)               ;; form strings  
+        mr (apply map (comp reverse list) m)    ;; rotate
+        mrs (map #(apply str %) mr)             ;; form strings
+        mr2 (apply map (comp reverse list) mr)  ;; rotate again
+        mr2s (map #(apply str %) mr2)           ;; form strings
+        mr3 (apply map (comp reverse list) mr2) ;; rotate again
+        mr3s (map #(apply str %) mr3)]          ;; form strings
+    (->> (concat ms mrs mr2s mr3s)              ;; concatenate lists of strings 
+         (map #(.contains % w))                 ;; see what strings contain the word
+         (remove false?)                        ;; remove falses
+         count)))                               ;; count
 ;; @@
 ;; =>
 ;;; {"type":"html","content":"<span class='clj-var'>#&#x27;clojure-code-challenge/count-words-in-matrix</span>","value":"#'clojure-code-challenge/count-words-in-matrix"}
@@ -285,7 +294,7 @@
 ;;; 
 ;;; Do you see the parallels with the previous problem? 
 ;;; 
-;;; Not really.
+;;; There are some parallels between this problem and the TTT problem in that they both are looking a rows amd columns. There are differences too. In TTT you don't have to reverse but you have diaginals
 ;;; 
 ;;; Will you solve more than is actually be asked?
 ;;; 
