@@ -33,6 +33,7 @@
 
 ;; @@
 (def dictionary (->> words
+                     (remove #(< 4 (count %)))
                      (map #(.toUpperCase %))
                      set))
 ;; @@
@@ -51,7 +52,7 @@
 (count dictionary)
 ;; @@
 ;; =>
-;;; {"type":"html","content":"<span class='clj-unkown'>233614</span>","value":"233614"}
+;;; {"type":"html","content":"<span class='clj-unkown'>6311</span>","value":"6311"}
 ;; <=
 
 ;; @@
@@ -65,7 +66,7 @@
 (take 5 dictionary)
 ;; @@
 ;; =>
-;;; {"type":"list-like","open":"<span class='clj-lazy-seq'>(</span>","close":"<span class='clj-lazy-seq'>)</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-string'>&quot;JUMBY&quot;</span>","value":"\"JUMBY\""},{"type":"html","content":"<span class='clj-string'>&quot;PROTESTABLE&quot;</span>","value":"\"PROTESTABLE\""},{"type":"html","content":"<span class='clj-string'>&quot;PROTECTING&quot;</span>","value":"\"PROTECTING\""},{"type":"html","content":"<span class='clj-string'>&quot;DIGENEA&quot;</span>","value":"\"DIGENEA\""},{"type":"html","content":"<span class='clj-string'>&quot;JOOM&quot;</span>","value":"\"JOOM\""}],"value":"(\"JUMBY\" \"PROTESTABLE\" \"PROTECTING\" \"DIGENEA\" \"JOOM\")"}
+;;; {"type":"list-like","open":"<span class='clj-lazy-seq'>(</span>","close":"<span class='clj-lazy-seq'>)</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-string'>&quot;JOOM&quot;</span>","value":"\"JOOM\""},{"type":"html","content":"<span class='clj-string'>&quot;UTUM&quot;</span>","value":"\"UTUM\""},{"type":"html","content":"<span class='clj-string'>&quot;BONY&quot;</span>","value":"\"BONY\""},{"type":"html","content":"<span class='clj-string'>&quot;CLAW&quot;</span>","value":"\"CLAW\""},{"type":"html","content":"<span class='clj-string'>&quot;PURE&quot;</span>","value":"\"PURE\""}],"value":"(\"JOOM\" \"UTUM\" \"BONY\" \"CLAW\" \"PURE\")"}
 ;; <=
 
 ;; @@
@@ -78,7 +79,7 @@
 ;; <=
 
 ;; @@
-(extract-word "CATS" 4)
+(extract-word "CATSANDDOGS" 4)
 ;; @@
 ;; =>
 ;;; {"type":"html","content":"<span class='clj-string'>&quot;CATS&quot;</span>","value":"\"CATS\""}
