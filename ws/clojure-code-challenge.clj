@@ -159,10 +159,12 @@
 ;; <=
 
 ;; @@
+(ddef dim 5)
+
 (defn valid-numbers?
   "validate against set of valid numbers"
   [p]
-  (= (count p) (count (filter #{1 2 3 4 5 6 7 8 9} p))))
+  (= (count p) (count (filter (set (rest (range (inc (* dim dim))))) p))))
 
 (defn no-dup?
   "No duplicates"
